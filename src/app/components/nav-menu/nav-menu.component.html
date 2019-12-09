@@ -1,0 +1,17 @@
+<div class="nav-container" [ngClass]="{'open': open}"
+     (click)="toggleNav()">
+
+  <div class='threebar hamburger' [ngClass]="{'cross': open}">
+    <div class='bar'></div>
+    <div class='bar'></div>
+    <div class='bar'></div>
+  </div>
+
+      <div class="row" *ngFor="let item of menuItems">
+        <i class="mdi {{item.icon}}"></i>
+        <div>
+          {{item.title}}
+        </div>
+      </div>
+
+</div>
