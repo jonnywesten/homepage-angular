@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #161618;
+  background: #040814;
   z-index: 100000;
   text-align: center;
   pointer-events: none;
@@ -81,6 +81,7 @@
   color: #eee;
   font-family: Arial;
   font-size: 20px;
-  position: relative;
-  top: calc(45% - 15px);
+  position: absolute;
+  top: calc(45% - 12px);
+  width: 100%;
 }
