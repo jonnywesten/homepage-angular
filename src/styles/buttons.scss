@@ -1,0 +1,30 @@
+@import "colors";
+
+.button{
+  margin: 5px;
+  color: #fff;
+  display: inline-block;
+  font-size: 2em;
+  transition: box-shadow 0.3s linear;
+  padding: 12px 20px;
+  position: relative;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &.red{
+    background: $red;
+    &:hover{
+      box-shadow: 0px 0px 30px $red;
+    }
+  }
+
+  &.blue{
+    background: $blue;
+  }
+  &:hover{
+    box-shadow: 0px 0px 30px blue;
+  }
+}
+

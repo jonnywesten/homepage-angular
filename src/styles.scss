@@ -1,4 +1,14 @@
 @import "styles/vendor/bootstrap-grid.css";
 @import "styles/colors";
+@import "styles/buttons";
+
+body {
+  font-family: 'Roboto';
+  margin: 0px;
+  font-size: 8pt;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
 
