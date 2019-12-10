@@ -1,0 +1,41 @@
+<div class="projects-container pt-5 pb-3">
+
+  <div class="row my-5 py-3 mx-auto projects-inner">
+
+    <div class="col-12">
+      <h4 class="mb-0">RECENT WORK</h4>
+      <h2 class="mt-0 mb-5">Projects</h2>
+    </div>
+
+
+    <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
+      <div *nguCarouselDef="let item;" class="item">
+
+        <div class="item-inner">
+        <div class="item-name">Neurolympics.nl</div>
+        <div class="marvel-device macbook zoomOut">
+          <div class="top-bar"></div>
+          <div class="camera"></div>
+          <div class="screen" id="neurolympics">
+            <div class="card zoomIn"></div>
+            <div class="text zoomIn">
+              <div class="bold">Neurolympics</div>
+              <span class="highlight">jQuery, WebGL</span>
+            </div>
+          </div>
+          <div class="bottom-bar"></div>
+        </div>
+      </div>
+    </div>
+
+      <div NguCarouselNext class="rightRs">
+        <i class="mdi mdi-arrow-right-bold-box-outline"></i>
+      </div>
+      <div NguCarouselPrev class="leftRs">
+        <i class="mdi mdi-arrow-left-bold-box-outline"></i>
+      </div>
+
+    </ngu-carousel>
+
+  </div>
+</div>

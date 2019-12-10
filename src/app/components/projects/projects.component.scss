@@ -1,0 +1,68 @@
+@import "../../../styles/colors";
+
+
+.projects-container {
+  background: #eee;
+  color: $darkblue;
+
+  .projects-inner {
+    max-width: 800px;
+
+    h4 {
+      color: #27AEE8;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 46px;
+      color: $darkblue;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    ngu-carousel {
+      width: 100%;
+
+      .tile {
+        background: green;
+        height: 200px;
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      .rightRs,
+      .leftRs {
+        font-size: 42px;
+        color: #666;
+        position: absolute;
+        top: 36%;
+        left: 10px;
+      }
+      .rightRs {
+        left: auto;
+        right: 10px;
+      }
+      .rightRs {
+        left: auto;
+        right: 10px;
+      }
+      .item {
+
+        .item-inner {
+          background: #444;
+          margin: 0 auto;
+          height: 300px;
+          width: 314px;
+        }
+      }
+
+      .zoomOut {
+        transform: scale(0.3);
+        transform-origin: 0 0;
+      }
+
+     
+    }
+  }
+}
