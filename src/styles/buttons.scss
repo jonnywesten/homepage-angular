@@ -4,15 +4,13 @@
   margin: 5px;
   color: #fff;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.5em;
   transition: box-shadow 0.3s linear;
   padding: 12px 20px;
   position: relative;
-  border-radius: 2.5em;
-
-  &:hover{
-    cursor: pointer;
-  }
+  border: none;
+  cursor: pointer;
+  outline: none !important;
 
   &.red{
     background: $red;

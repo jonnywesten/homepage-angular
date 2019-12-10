@@ -1,0 +1,55 @@
+@import "../../../styles/colors";
+
+
+footer {
+  background: $darkblue;
+  padding: 70px 0 50px 0;
+  position: relative;
+
+
+  .mdi-chevron-double-up {
+    position: absolute;
+    top: -25px;
+    width: 47px;
+    height: 50px;
+    line-height: 40pt;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 47px;
+
+  }
+
+    .icon-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        width: 55px;
+        height: 55px;
+        position: relative;
+        text-align: center;
+        margin: 0 15px;
+        background: #111520;
+        font-size: 18pt;
+        color: #fff;
+
+        &:hover{
+          background: #27AEE8;
+          box-shadow: 0 0 0 3px rgba(4, 94, 201, 0.1);
+          transform: scale(0.9);
+        }
+
+      }
+    }
+
+}

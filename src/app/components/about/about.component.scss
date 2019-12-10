@@ -1,0 +1,59 @@
+@import "../../../styles/colors";
+
+
+.about-container{
+  background: rgba($darkblue, 0.95);
+  color: $lightgrey;
+
+  .about-inner{
+    max-width: 800px;
+
+    h4{
+      color: #27AEE8;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    h2{
+      font-size: 46px;
+      color: #fff;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .about-text{
+      line-height: 1.6;
+      font-size: 17px;
+      text-align: justify;
+    }
+
+    .about-image{
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      text-align: center;
+      img{
+        width: 124px;
+        max-width: 100%;
+      }
+    }
+
+    .about-links{
+      text-align: right;
+      font-size: 34px;
+      color: #fff;
+
+      i{
+        margin-right: 17px;
+        transition: color .15s linear;
+        &:hover{
+          color: #afbac7;
+        }
+        cursor: pointer;
+      }
+    }
+
+  }
+}

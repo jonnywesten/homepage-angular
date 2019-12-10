@@ -18,7 +18,8 @@ export class AppComponent implements OnInit {
 
     this.load(
       'stars.jpg',
-      'twinkling.png'
+      'twinkling.png',
+      'me.png'
     );
     this.loaded = true;
   }

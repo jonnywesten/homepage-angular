@@ -1,0 +1,27 @@
+@import "../../../styles/colors";
+
+
+.projects-container{
+  background: #eee;
+  color: $darkblue;
+
+  .projects-inner{
+    max-width: 800px;
+
+    h4{
+      color: #27AEE8;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    h2{
+      font-size: 46px;
+      color: $darkblue;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+
+
+  }
+}
