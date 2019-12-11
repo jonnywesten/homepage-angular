@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.load(
-      'stars.jpg',
+      'stars.png',
+      'horizon.png',
       'twinkling.png',
       'me.png'
     );

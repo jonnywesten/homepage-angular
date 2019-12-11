@@ -1,36 +1,105 @@
 @import "../../../styles/colors";
 
-.landing-container {
+@font-face {
+  font-family: 'Indelible';
+  src: url(../../../assets/fonts/Indelible.otf);
+}
+
+.fullscreen {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
   width: 100%;
   height: 100%;
-  background: $darkblue url(../../../assets/img/stars.jpg) repeat top center;
+}
+
+.landing-container {
+
+  background: $darkblue url(../../../assets/img/stars.png) repeat top center;
   background-size: cover;
   overflow: hidden;
+  cursor: pointer;
+
+  .bg-overlay {
+
+    display: block;
+    background: linear-gradient(to top, #0d171f, #6c5b7b, #c06c84);
+    opacity: 0.25;
+    z-index: 3;
+  }
+
+  .sun {
+    background: linear-gradient(to bottom, #FFFF05 0%, #FF4700 50%);
+    border-radius: 50%;
+    box-shadow: 0 0 26px 20px rgba(255, 255, 5, 0.5);
+    position: absolute;
+    z-index: 1;
+    height: 36vw;
+    width: 36vw;
+    left: calc(50% - 18vw);
+    top: calc(75% - 36vw);
+
+    @media (min-width: 1440px) {
+      height: 520px;
+      width: 520px;
+      left: calc(50% - 260px);
+      top: calc(75% - 520px);
+    }
+
+  }
+
+  .stripes {
+    background: repeating-linear-gradient(transparent, transparent 2%, #000 2%, #000 4%);
+    opacity: 0.1;
+  }
 
 
-  .twinkling{
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    display:block;
-    background:transparent url(../../../assets/img/twinkling.png) repeat top center;
-    z-index:1;
-    animation:move-twink-back 500s linear infinite;
+  .twinkling {
+    background: transparent url(../../../assets/img/twinkling.png) repeat top center;
+    z-index: 1;
+    animation: move-twink-back 300s linear infinite;
   }
 
   @keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -10000px 5000px;
+    }
+  }
+
+  .horizon{
+    width: 100%;
+    height: 20vw;
+    background: transparent url(../../../assets/img/horizon.png) repeat-x bottom center;
+    background-size: contain;
+    position: absolute;
+    bottom: 25%;
+    z-index: 3;
+    max-height: 300px;
+  }
+
+  .glow{
+    height: 6%;
+    width: 100%;
+    position: absolute;
+    bottom: 25%;
+    z-index: 4;
+    background: linear-gradient(to top, rgba($blue, 0.6) 0%, transparent 100%);
+
+
+  }
+
+  .floor {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    background: black;
+    bottom: 0;
+    z-index: 1;
   }
 
 
@@ -42,11 +111,16 @@
     left: 0;
     right: 0;
     top: 8%;
-    z-index: 3;
+    z-index: 13;
 
     @media (max-width: 768px) {
       transform: scale(0.7);
       top: 5%;
+    }
+
+    @media (min-width: 1640px) {
+      transform: scale(1.4);
+      top: 16%;
     }
 
     h1 {
@@ -60,8 +134,8 @@
       position: absolute;
       text-align: center;
       text-transform: uppercase;
-      top: 5px;
-      width: 400px;
+      top: 10px;
+      width: 410px;
       z-index: 11;
       background: -webkit-linear-gradient(top, #151c60, #c6cbf5 40%, #000 40%, #e1a0ce 65%, white);
       -webkit-background-clip: text;
@@ -71,20 +145,37 @@
     }
 
     h2 {
+
       color: #d10091;
       display: block;
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      z-index: 11;
+
       font-family: 'Yellowtail', cursive;
       font-size: 150px;
-      margin-right: -8em;
-      position: absolute;
-      text-shadow: 0 0 1px $red, 0 -3px 3px rgba(255, 255, 255, 0.8), 0 3px 3px rgba(0, 0, 0, 0.5), 0 0 15px #d100b1, 0 0 45px rgba(209, 0, 17, 0.8);
-      text-align: center;
+      text-shadow: 0 0 1px #C20056, 0 -3px 3px rgba(255, 255, 255, 0.8), 0 3px 3px rgba(0, 0, 0, 0.5), 0 0 5px #d100b1, 0 0 15px rgba(209, 0, 17, 0.8);
       text-decoration: underline;
-      text-transform: none;
       transform: skew(-10deg) rotate(-10deg);
       width: 100%;
-      top:-24px;
-      z-index: 11;
+      top: -24px;
+      left:0;
+
+
+      font-family: "Indelible", cursive;
+      font-size: 120px;
+      text-shadow: 0 1px 1px white;
+      transform: skew(-5deg) rotate(-10deg);
+      text-decoration: none;
+      top: 27px;
+      left: -15px;
+
+      /* Edge bugfix */
+      @supports (-ms-ime-align:auto) {
+        text-shadow: none;
+      }
+
     }
 
 
@@ -106,6 +197,7 @@
         stroke-dashoffset: 0;
       }
     }
+
   }
 
   .buttons {
@@ -125,8 +217,8 @@
         top: 12px;
       }
 
-      &:hover{
-        .mdi{
+      &:hover {
+        .mdi {
           transform: rotate(90deg);
         }
       }
@@ -139,17 +231,16 @@
   .midnightGrid {
     position: absolute;
     z-index: 2;
-    top: 66%;
+    top: 75%;
     width: 100%;
     height: 100%;
-    transform-origin: top center;
-    overflow-y: hidden;
+    transform-origin: 50% 0%;
     box-shadow: 0px 1px 200px $blue;
-    transform: perspective(40vmin) rotateX(77deg);
+    transform: perspective(40vh) rotateX(77deg);
 
     &:after {
       content: "";
-      background: linear-gradient(to top, rgba(0, 50, 100, 0.15) 60%, rgba(0, 50, 100, 0.35) 90%);
+      background: linear-gradient(to top, rgba(0, 50, 100, 0.15) 60%, rgba(28, 126, 224, 0.35) 90%);
       display: block;
       position: relative;
       height: 100%;
@@ -169,11 +260,11 @@
         left: 0;
         background: repeating-linear-gradient(
             to top,
-            rgba($red, 0),
-            rgba($red, 0),
-            rgba($red, 0) 2.4vmax,
-            rgba($red, 1) 2.4vmax,
-            rgba($red, 1) 2.56vmax
+            rgba($blue, 0),
+            rgba($blue, 0),
+            rgba($blue, 0) 2vw,
+            rgba($blue, 1) 2vw,
+            rgba($blue, 1) 2.16vw
         );
       }
 
@@ -188,10 +279,10 @@
         left: -4px;
         background: repeating-linear-gradient(
             to top,
-            rgba($red, 0),
-            rgba($red, 0) 2.4vmax,
-            rgba($red, 0.2) 2.4vmax,
-            rgba($red, 0.4) 2.56vmax
+            rgba($blue, 0),
+            rgba($blue, 0) 2vw,
+            rgba($blue, 0.2) 2vw,
+            rgba($blue, 0.4) 2.16vw
         );
       }
     }
@@ -200,10 +291,10 @@
 
   @keyframes animatedGrid {
     from {
-      transform: translateY(50vmin)
+      transform: translateY(50vh)
     }
     to {
-      transform: translateY(100vmin)
+      transform: translateY(100vh)
     }
   }
 
