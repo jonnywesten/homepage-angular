@@ -11,6 +11,7 @@ export class NavMenuComponent implements OnInit {
   }
 
   public open = false;
+  public filled = false;
 
   public menuItems = [
     {
@@ -32,9 +33,22 @@ export class NavMenuComponent implements OnInit {
   ];
 
   ngOnInit() {
+    window.addEventListener('scroll', this.scroll, true); //third parameter
+    this.scroll();
   }
+
+  scroll = () => {
+    this.filled = window.pageYOffset > window.innerHeight;
+  };
 
   toggleNav() {
     this.open = !this.open;
+
+    this.scroll();
+
+    if(this.open){
+      this.filled =  true;
+    }
+
   }
 }

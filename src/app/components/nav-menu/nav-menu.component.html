@@ -1,17 +1,40 @@
-<div class="nav-container" [ngClass]="{'open': open}"
-     (click)="toggleNav()">
+<nav class="navbar navbar-expand-md navbar-dark" [ngClass]="{'filled': filled}">
+  <a class="navbar-brand" href="#">
+    <span class="code">code</span>
+    <span class="smart">smart</span>
+  </a>
+  <button class="navbar-toggler" (click)="toggleNav()" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <div class='threebar hamburger' [ngClass]="{'cross': open}">
+      <div class='bar'></div>
+      <div class='bar'></div>
+      <div class='bar'></div>
+    </div>
+  </button>
 
-  <div class='threebar hamburger' [ngClass]="{'cross': open}">
-    <div class='bar'></div>
-    <div class='bar'></div>
-    <div class='bar'></div>
+  <div class="navbar-collapse" [ngClass]="{'collapse': !open}">
+    <ul class="navbar-nav mr-0 ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Start</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Privacy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Impress</a>
+      </li>
+
+    </ul>
+
   </div>
-
-      <div class="row" *ngFor="let item of menuItems">
-        <i class="mdi {{item.icon}}"></i>
-        <div>
-          {{item.title}}
-        </div>
-      </div>
-
-</div>
+</nav>

@@ -21,40 +21,96 @@
       font-style: italic;
     }
 
+  }
+
+  .projects-carousel {
+
+    max-width: 899px;
+    margin: 0 auto;
+
+
     ngu-carousel {
       width: 100%;
 
-      .tile {
-        background: green;
-        height: 200px;
-        width: 300px;
-        margin: 0 auto;
-      }
 
       .rightRs,
       .leftRs {
-        font-size: 42px;
+        font-size: 74px;
         color: #666;
         position: absolute;
-        top: 36%;
-        left: 10px;
+        top: 50px;
+        left: -12px;
       }
+
       .rightRs {
         left: auto;
-        right: 10px;
+        right: -12px;
       }
-      .rightRs {
-        left: auto;
-        right: 10px;
-      }
+
       .item {
 
         .item-inner {
-          background: #444;
           margin: 0 auto;
-          height: 300px;
+          height: 216px;
           width: 314px;
         }
+
+        .item-name {
+          padding: 0 0 10px;
+          text-align: center;
+          font-size: 26px;
+          font-weight: bold;
+          color: #444;
+        }
+        .item-type{
+          text-align: center;
+          color: #777;
+          font-size: 16px;
+          padding: 16px 0 0;
+
+        }
+      }
+
+      .screen {
+        text-align: center;
+        padding-top: 80px;
+        cursor: pointer;
+        background-position: top;
+        background-size: cover;
+
+        &:after {
+          content: ""; 
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $blue;
+          opacity: 0;
+          transition: opacity .2s linear;
+        }
+
+        .mdi {
+          transition: all 0.2s linear;
+          opacity: 0;
+          font-size: 280px;
+          position: absolute;
+          color: white;
+          z-index: 1;
+          left: calc(50% - 140px);
+        }
+
+        &:hover {
+          &:after {
+            opacity: .7;
+          }
+
+          .mdi {
+            opacity: 1;
+          }
+        }
+
+
       }
 
       .zoomOut {
@@ -62,7 +118,6 @@
         transform-origin: 0 0;
       }
 
-     
     }
   }
 }

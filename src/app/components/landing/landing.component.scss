@@ -3,6 +3,7 @@
 @font-face {
   font-family: 'Indelible';
   src: url(../../../assets/fonts/Indelible.otf);
+  src: url(../../../assets/fonts/Indelible.woff);
 }
 
 .fullscreen {
@@ -20,12 +21,11 @@
   background: $darkblue url(../../../assets/img/stars.png) repeat top center;
   background-size: cover;
   overflow: hidden;
-  cursor: pointer;
-
+ 
   .bg-overlay {
 
     display: block;
-    background: linear-gradient(to top, #0d171f, #6c5b7b, #c06c84);
+    background: linear-gradient(to top, #0d171f, #6c5b7b, #d4587b);
     opacity: 0.25;
     z-index: 3;
   }
@@ -48,6 +48,17 @@
       top: calc(75% - 520px);
     }
 
+    .banner::after {
+      content: ""; // ::before and ::after both require content
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(transparent, transparent 2%, #000 2%, #000 4%);
+      opacity: 0.1;
+  }
+
   }
 
   .stripes {
@@ -66,12 +77,13 @@
     from {
       background-position: 0 0;
     }
+
     to {
       background-position: -10000px 5000px;
     }
   }
 
-  .horizon{
+  .horizon {
     width: 100%;
     height: 20vw;
     background: transparent url(../../../assets/img/horizon.png) repeat-x bottom center;
@@ -82,15 +94,13 @@
     max-height: 300px;
   }
 
-  .glow{
-    height: 6%;
+  .glow {
+    height: 25%;
     width: 100%;
     position: absolute;
-    bottom: 25%;
+    bottom: 0;
     z-index: 4;
-    background: linear-gradient(to top, rgba($blue, 0.6) 0%, transparent 100%);
-
-
+    box-shadow: 0 0 7vh -1vh #3e7ef5;
   }
 
   .floor {
@@ -113,12 +123,13 @@
     top: 8%;
     z-index: 13;
 
+
     @media (max-width: 768px) {
       transform: scale(0.7);
       top: 5%;
     }
 
-    @media (min-width: 1640px) {
+    @media (min-width: 1921px) {
       transform: scale(1.4);
       top: 16%;
     }
@@ -142,38 +153,48 @@
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: white;
+      user-select: none;
+
     }
 
     h2 {
 
-      color: #d10091;
+      color: rgba(204, 0, 0, 1);
       display: block;
       width: 100%;
       position: absolute;
       text-align: center;
       z-index: 11;
-
-      font-family: 'Yellowtail', cursive;
-      font-size: 150px;
-      text-shadow: 0 0 1px #C20056, 0 -3px 3px rgba(255, 255, 255, 0.8), 0 3px 3px rgba(0, 0, 0, 0.5), 0 0 5px #d100b1, 0 0 15px rgba(209, 0, 17, 0.8);
-      text-decoration: underline;
-      transform: skew(-10deg) rotate(-10deg);
-      width: 100%;
-      top: -24px;
-      left:0;
-
-
       font-family: "Indelible", cursive;
       font-size: 120px;
-      text-shadow: 0 1px 1px white;
       transform: skew(-5deg) rotate(-10deg);
       text-decoration: none;
-      top: 27px;
-      left: -15px;
+      font-weight: 600;
+      top: 120px;
+      user-select: none;
 
-      /* Edge bugfix */
-      @supports (-ms-ime-align:auto) {
-        text-shadow: none;
+      @media (min-width: 768px) and (min-height: 768px) {
+        color: rgba(204, 0, 0, 0.7);
+
+        background: #cc0000 -webkit-gradient(linear, left top, right top, from(#cc0000), to(#cc0000), color-stop(0.5, #fff)) 0 0 no-repeat;
+        -webkit-background-size: 300px;
+        -webkit-background-clip: text;
+        -webkit-animation-name: shine;
+        -webkit-animation-duration: 4.5s;
+        -webkit-animation-iteration-count: infinite;
+
+      }
+    }
+
+    @-webkit-keyframes shine {
+
+      0% {
+        background-position: -200px;
+      }
+
+
+      100% {
+        background-position: 150% 0%;
       }
 
     }
@@ -200,31 +221,7 @@
 
   }
 
-  .buttons {
-    text-align: center;
-    z-index: 22;
-    padding-top: 10%;
 
-    .button {
-      width: 8em;
-      text-decoration: none;
-      text-align: left;
-
-      .mdi {
-        transition: transform .3s;
-        position: absolute;
-        right: 12px;
-        top: 12px;
-      }
-
-      &:hover {
-        .mdi {
-          transform: rotate(90deg);
-        }
-      }
-    }
-
-  }
 
 
   /*the grid*/
@@ -235,8 +232,9 @@
     width: 100%;
     height: 100%;
     transform-origin: 50% 0%;
-    box-shadow: 0px 1px 200px $blue;
+    box-shadow: 0px 1px 120px $blue;
     transform: perspective(40vh) rotateX(77deg);
+    overflow-y: hidden;
 
     &:after {
       content: "";
@@ -252,20 +250,39 @@
     .gridInner {
       animation: animatedGrid 30s linear infinite;
 
-      .grid-x, .grid-y {
-        width: 100vw;
-        height: 100vw;
+      .grid-x,
+      .grid-y {
+        width: 100vh;
+        height: 100vh;
+
+        @media screen and (orientation:landscape) {
+          width: 100vw;
+          height: 100vw;
+        }
+
         position: absolute;
         bottom: 0;
         left: 0;
-        background: repeating-linear-gradient(
-            to top,
-            rgba($blue, 0),
-            rgba($blue, 0),
-            rgba($blue, 0) 2vw,
-            rgba($blue, 1) 2vw,
-            rgba($blue, 1) 2.16vw
-        );
+        background: repeating-linear-gradient(to top,
+          rgba($blue, 0),
+          rgba($blue, 0),
+          rgba($blue, 0) 2vw,
+          rgba($blue, 1) 2vw,
+          rgba($blue, 1) 2.16vw);
+      }
+
+      &-2 {
+
+        .grid-x,
+        .grid-y {
+          bottom: -3px;
+          left: -4px;
+          background: repeating-linear-gradient(to top,
+              rgba($blue, 0),
+              rgba($blue, 0) 2vw,
+              rgba($blue, 0.2) 2vw,
+              rgba($blue, 0.4) 2.16vw);
+        }
       }
 
       .grid-y {
@@ -273,19 +290,7 @@
       }
     }
 
-    .gridInner-2 {
-      .grid-x, .grid-y {
-        bottom: -3px;
-        left: -4px;
-        background: repeating-linear-gradient(
-            to top,
-            rgba($blue, 0),
-            rgba($blue, 0) 2vw,
-            rgba($blue, 0.2) 2vw,
-            rgba($blue, 0.4) 2.16vw
-        );
-      }
-    }
+
   }
 
 
@@ -293,14 +298,10 @@
     from {
       transform: translateY(50vh)
     }
+
     to {
       transform: translateY(100vh)
     }
   }
 
 }
-
-
-
-
-

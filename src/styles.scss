@@ -1,4 +1,4 @@
-@import "styles/vendor/bootstrap-grid.css";
+@import "styles/vendor/bootstrap.css";
 @import "styles/vendor/devices.min.css";
 @import "styles/colors";
 @import "styles/buttons";
@@ -12,4 +12,9 @@ body {
   overflow-x: hidden;
 }
 
+ 
+#start{
+  height:100vh;
+}
 
+ 

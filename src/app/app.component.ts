@@ -10,8 +10,7 @@ export class AppComponent implements OnInit {
   constructor() {
   }
 
-  public loaded = false;
-  private imgs = new Array();
+    private imgs = new Array();
 
 
   ngOnInit(): void {
@@ -22,7 +21,13 @@ export class AppComponent implements OnInit {
       'twinkling.png',
       'me.png'
     );
-    this.loaded = true;
+
+    setTimeout(()=>{
+      console.log("yo");
+      document.getElementById('loading-overlay').style.opacity = '0';
+    },500);
+    
+    
   }
 
   load(...args: any[]): void {

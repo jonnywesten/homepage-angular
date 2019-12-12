@@ -6,36 +6,36 @@
       <h4 class="mb-0">RECENT WORK</h4>
       <h2 class="mt-0 mb-5">Projects</h2>
     </div>
+  </div>
 
 
+<div class="row projects-carousel mb-5">
     <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
       <div *nguCarouselDef="let item;" class="item">
 
         <div class="item-inner">
-        <div class="item-name">Neurolympics.nl</div>
-        <div class="marvel-device macbook zoomOut">
-          <div class="top-bar"></div>
-          <div class="camera"></div>
-          <div class="screen" id="neurolympics">
-            <div class="card zoomIn"></div>
-            <div class="text zoomIn">
-              <div class="bold">Neurolympics</div>
-              <span class="highlight">jQuery, WebGL</span>
+          <div class="marvel-device macbook zoomOut">
+            <div class="top-bar"></div>
+            <div class="camera"></div>
+            <div class="screen"  [ngStyle]="{'background-image': 'url(./assets/img/thumb-'+item.index+'.jpg'}">               
+               <i class="mdi mdi-magnify-scan"></i>
             </div>
+            <div class="bottom-bar"></div>
           </div>
-          <div class="bottom-bar"></div>
         </div>
+        <div class="item-type">Subtitle</div>
+        <div class="item-name">{{item.name}}</div>
       </div>
-    </div>
 
       <div NguCarouselNext class="rightRs">
-        <i class="mdi mdi-arrow-right-bold-box-outline"></i>
+        <i class="mdi mdi-arrow-right-bold"></i>
       </div>
       <div NguCarouselPrev class="leftRs">
-        <i class="mdi mdi-arrow-left-bold-box-outline"></i>
+        <i class="mdi mdi-arrow-left-bold"></i>
       </div>
 
     </ngu-carousel>
-
+ 
   </div>
+ 
 </div>

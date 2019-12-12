@@ -1,99 +1,103 @@
 @import "../../../styles/colors";
-
-.nav-container {
+.navbar{
   position: fixed;
-  width: 5em;
-  height: 5em;
-  background: $blue;
-  border-radius: 2.5em;
-  top: 4em;
-  left: 4em;
-  z-index: 4;
-  cursor: pointer;
-  transition: height .1s linear;
-  overflow: hidden;
+  top: 0;
+  width: 100%;
+  z-index: 15;
+  transition: .2s all ease-in;
+  padding: 0 1rem;
 
-  @media (max-width: 500px) {
-    top: 1em;
-    left: 1em;
+
+  &.filled{
+    background: rgba(#040814, 0.95);
+ 
   }
 
-  &.open {
-    height: 24em;
-    overflow: visible;
-  }
+  .navbar-toggler {
+    padding: 8px 5px 0;
+    font-size: 12px;
+    line-height: 1;
+    background-color: transparent;
+    border: navajowhite;
+    border-radius: 0;
+    width: 3.5em;
+    outline: none !important;
 
-  .row {
-    color: #ccc;
-    margin: 10px 0 15px 13px;
+}
 
-    i {
-      transition: all 0.3s ease;
-      font-size: 2.5em;
-    }
-
-    div {
-      transition: all 0.3s ease;
-      margin-top: -25px;
-      margin-left: 48px;
-      white-space: nowrap;
-      font-size: 16px;
-    }
-
-    &:hover {
+  .nav-item{
+    transition: .1s color linear;
+    &:hover{
       color: #fff;
-
-      div {
-        margin-left: 54px;
-      }
     }
   }
 
-
-  .threebar {
-    position: relative;
-    height: 3em;
-    margin-top: 1.5em;
-    margin-left: 1.5em;
-
-    .bar {
-      position: absolute;
-      width: 2em;
-      height: 3px;
-      background: #ccc;
-      top: 1em;
-      transition: all 0.5s ease;
-
-      &:nth-child(1) {
-        transform: translateY(-250%);
-      }
-
-      &:nth-child(3) {
-        transform: translateY(250%);
-      }
+  .navbar-collapse{
+    transition: .2s all ease-in;
+    height: 218px;
+    max-height: 218px;
+    @media screen and (max-width:768px){
+      
+    overflow: hidden;
     }
+  }
 
-    &.cross {
-      .bar:nth-child(1) {
-        transform: rotate(45deg);
-      }
-
-      .bar:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-
-      .bar:nth-child(2) {
-        opacity: 0;
-      }
-    }
-
-    &:hover {
-      .bar {
-        background: #fff;
-      }
-    }
+  .navbar-collapse.collapse:not(.show) {
+    max-height: 0;
+    height: 0px;
+     display: block;
   }
 }
 
+span.code{
+  font-family: 'Orbitron', sans-serif;
+
+}
+
+.smart{
+  font-family: "Indelible", cursive;
+
+}
 
 
+.threebar {
+  position: relative;
+  height: 3em; 
+
+  .bar {
+    position: absolute;
+    width: 2em;
+    height: 3px;
+    background: #ccc;
+    top: 1em;
+    transition: all 0.5s ease;
+
+    &:nth-child(1) {
+      transform: translateY(-250%);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(250%);
+    }
+  }
+
+  &.cross {
+    .bar:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    .bar:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .bar {
+      background: #fff;
+    }
+  }
+}

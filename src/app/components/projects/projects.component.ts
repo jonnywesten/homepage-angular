@@ -14,7 +14,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   carouselConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 2, md: 2, lg: 2, all: 0},
     load: 6,
-    interval: {timing: 4000000000000, initialDelay: 10000000000000},
+    interval: {timing: 9999999999, initialDelay: 9999999999},
     loop: true,
     touch: true,
     velocity: 0.2,
@@ -23,7 +23,32 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       hideOnSingleSlide: true
     }
   }
-  carouselItems = [1, 2, 3, 4, 5, 6];
+  carouselItems = [
+    {
+      name: "Neurolympics.nl",
+      index: 1
+    },
+    {
+      name: "Neurolympics.nl",
+      index: 2
+    },
+    {
+      name: "Neurolympics.nl",
+      index: 3
+    },
+    {
+      name: "Neurolympics.nl",
+      index: 4
+    },
+    {
+      name: "Neurolympics.nl",
+      index: 5
+    },
+    {
+      name: "Neurolympics.nl",
+      index: 6
+    },
+  ];
 
   ngOnInit() {
 
