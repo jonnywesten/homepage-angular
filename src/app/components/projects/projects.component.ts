@@ -1,5 +1,5 @@
-import {Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, HostListener} from '@angular/core';
-import {NguCarousel, NguCarouselConfig} from '@ngu/carousel';
+import { Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, HostListener } from '@angular/core';
+import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 
 @Component({
   selector: 'app-projects',
@@ -11,41 +11,59 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   constructor(private cdr: ChangeDetectorRef) {
   }
 
-  @ViewChild('myCarousel', {static: false}) myCarousel: NguCarousel<any>;
+  @ViewChild('myCarousel', { static: false }) myCarousel: NguCarousel<any>;
   carouselConfig: NguCarouselConfig = {
-    grid: {xs: 2, sm: 3, md: 3, lg: 3, all: 0},
+    grid: { xs: 2, sm: 3, md: 3, lg: 3, all: 0 },
     load: 6,
-    interval: {timing: 9999999, initialDelay: 9999999},
+    interval: { timing: 9999999, initialDelay: 9999999 },
     loop: true,
     touch: true,
-    velocity: 0.2,
+    slide: 1,
+    velocity: 0,
     point: {
       visible: true,
       hideOnSingleSlide: true
     }
   };
-  carouselItems = [
+  items = [
     {
       name: 'Neurolympics.nl',
       text: 'Gamification - Brain-based assessment games',
-      img: 'nl-2.jpg'
+      thumb: 'nl-2.jpg',
+      img:'nl-1.png'
+    },
+    {
+      name: 'MetallRente',
+      text: 'IT Consulting - Angular, Bootstrap, Java Spring',
+      thumb: 'mr.png',
+      img:'mr-1.png'
+    },
+    {
+      name: 'FließenConcept Eskuche',
+      text: 'Simple One Pager - HTML5, Bootstrap, CSS3',
+      thumb: 'fce.png',
+      img:'fce-1.jpg'
     },
     {
       name: 'Neurolympics Dashboard',
       text: 'Data Management - React application, Material UI',
-      img: 'nld.jpg'
+      thumb: 'nld.jpg',
+      img:'nld-1.png'      
     },
     {
       name: 'aestheticology.net',
       text: 'Custom webdesign - Drupal website, HTML5, jQuery',
+      thumb: 'aest.jpg',
       img: 'aest.jpg'
     },
     {
       name: 'LiBo Chatbot',
       text: 'Chat application - Angular, PHP, Goolge Dialogflow',
-      img: 'libo.jpg'
+      thumb: 'libo-2.jpg'
     }
   ];
+
+  activeItem = this.items[0];
 
   ngOnInit() {
   }
@@ -53,5 +71,15 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.cdr.detectChanges();
   }
+
+  selectItem(i: number) {
+    this.activeItem = this.items[i];
+  }
+
+  isActive(i: number): string {
+    return this.items.indexOf(this.activeItem) === i ? 'isActive' : '';
+  }
+
+
 
 }

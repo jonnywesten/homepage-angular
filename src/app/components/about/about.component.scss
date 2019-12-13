@@ -5,29 +5,19 @@
   color: $lightgrey;
 
   img {
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-
+    filter:brightness(0.6);
     width: 124px;
     max-width: 100%;
+    border-radius: 3px;
+  
   }
-
 
 
   i {
-    color: #fff;
-    
-    transition: color .15s linear;
-
-    &:hover {
-      color: #afbac7;
-    }
-
+    transition: all .15s linear;
     cursor: pointer;
+    &:hover {
+      color: #fff;
+    }
   }
-
-
-
 }
