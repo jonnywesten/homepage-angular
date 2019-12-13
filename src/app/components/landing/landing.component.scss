@@ -192,7 +192,7 @@
       position: relative;
       stroke-dasharray: 1200;
       stroke-dashoffset: 1200;
-      top: 6em;
+      top: 48px;
       z-index: 8;
     }
 
@@ -238,7 +238,7 @@
         @media screen and (orientation:landscape) {
           width: 100vw;
           height: 100vw;
-        }       
+        }
       }
 
       &-2 {

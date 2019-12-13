@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NguCarouselModule } from '@ngu/carousel';
-import {CarouselModule} from "ngx-carousel-lib";
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -30,8 +29,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NguCarouselModule,
-    CarouselModule
+    NguCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

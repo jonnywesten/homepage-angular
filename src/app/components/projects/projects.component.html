@@ -4,24 +4,68 @@
 
     <div class="col-12">
       <h6 class="mb-0">Recent Work</h6>
-      <h2 class="mt-0 mb-5">Projects</h2>
+      <h2 class="mt-0 mb-3">Projects</h2>
     </div>
   </div>
 
-  <div class="col-12 carousel mb-5">
+  <div class="col-12 mb-4">
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua.
+    </p>
+  </div>
+
+  <div class="col-12 my-3">
+    <div class="row">
+
+      <div class="col-sm-4">
+
+        <h4>Neurolympics.nl</h4>
+
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua.
+        </p>
+
+        <p class="tech">
+          webGL jQuery SASS Rest-api
+        </p>
+
+        <div class="btn btn-dark red col-12 mb-3">Learn more..</div>
+      </div>
+
+      <div class="col-sm-8  order-first order-sm-last" style="min-height: 200px">
+        <div class="image" style="min-height: 200px; "
+             [ngStyle]="{'background': 'url(./assets/img/projects/nl-1.png) 50% 50% no-repeat', 'background-size': 'contain'}"></div>
+      </div>
+    </div>
+
+    <div class="d-block d-sm-none">
+      <div class="rightRs mr-2">
+        <i class="mdi mdi-chevron-right"></i>
+      </div>
+      <div class="leftRs ml-2">
+        <i class="mdi mdi-chevron-left"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mb-5 d-none d-sm-block">
 
     <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
 
       <div *nguCarouselDef="let item;" class="item">
         <div class="card">
           <div class="image" [ngStyle]="{'background-image': 'url(./assets/img/projects/'+item.img}"></div>
-          <h5 class="col-12 pt-4 pb-2 title">{{item.name}}</h5>
-          <p class="col-12 pb-3 subtitle">{{item.text}}</p>
-          <div class="col-12">
-            <div class="btn btn-dark red col-9 offset-3 mt-3 mb-4">Learn more..</div>
-          </div>
+          <h6 class="col-12 pt-3 pb-1 title">{{item.name}}</h6>
+          <p class="col-12 subtitle">{{item.text}}</p>
+          <!--<div class="col-12">
+            <div class="btn btn-dark red col-9 offset-3 mb-3">Learn more..</div>
+          </div>-->
         </div>
-
       </div>
 
       <div NguCarouselNext class="rightRs">
@@ -30,7 +74,6 @@
       <div NguCarouselPrev class="leftRs">
         <i class="mdi mdi-chevron-left"></i>
       </div>
- 
 
     </ngu-carousel>
   </div>
