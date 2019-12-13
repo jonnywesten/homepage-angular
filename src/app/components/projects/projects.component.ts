@@ -30,15 +30,20 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
        img:'nl-2.jpg'
     },
     {
-      name: "LiBo",
-      text:"Chatbot application - Natuarl language conversations",
-       img:'libo-2.jpg'
+      name: "Neurolympics Dashboard",
+      text:"Data Management - React application, Material UI",
+       img:'nld.jpg'
     },
     {
       name: "Custom webdesign",
       text:"aestheticology.net - Drupal website",
        img:'aest.jpg'
-    }  
+    },
+   {
+      name: "LiBo",
+      text:"Chatbot application - Natuarl language conversations",
+       img:'libo-2.jpg'
+    }   
   ];
 
   ngOnInit() {
