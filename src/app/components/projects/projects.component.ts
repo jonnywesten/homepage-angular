@@ -12,42 +12,33 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('myCarousel', {static:false}) myCarousel: NguCarousel<any>;
   carouselConfig: NguCarouselConfig = {
-    grid: { xs: 1, sm: 2, md: 2, lg: 2, all: 0},
+    grid: { xs: 1, sm: 2, md: 3, lg: 3, all: 0},
     load: 6,
     interval: {timing: 9999999999, initialDelay: 9999999999},
     loop: true,
     touch: true,
     velocity: 0.2,
     point: {
-      visible: false,
+      visible: true,
       hideOnSingleSlide: true
     }
   }
   carouselItems = [
     {
       name: "Neurolympics.nl",
-      index: 1
+      text:"Gamification - Brain-based assesment games",
+       img:'nl-2.jpg'
     },
     {
-      name: "Neurolympics.nl",
-      index: 2
+      name: "LiBo",
+      text:"Chatbot application - Natuarl language conversations",
+       img:'libo-2.jpg'
     },
     {
-      name: "Neurolympics.nl",
-      index: 3
-    },
-    {
-      name: "Neurolympics.nl",
-      index: 4
-    },
-    {
-      name: "Neurolympics.nl",
-      index: 5
-    },
-    {
-      name: "Neurolympics.nl",
-      index: 6
-    },
+      name: "Custom webdesign",
+      text:"aestheticology.net - Drupal website",
+       img:'aest.jpg'
+    }  
   ];
 
   ngOnInit() {

@@ -1,98 +1,68 @@
 @import "../../../styles/colors";
 
-svg{
-  position: absolute;
-  display: none;
-}
 
-.contact-container{
+.content {
   background: rgba($darkblue, 0.95);
   color: $lightgrey;
 
-  .contact-inner{
-    max-width: 800px;
-
-    h4{
-      color: #27AEE8;
-      font-size: 16px;
-      text-transform: uppercase;
-    }
-
-    h2{
-      font-size: 46px;
-      color: #fff;
-      font-weight: bold;
-      font-style: italic;
-    }
-  }
-
-  .contact-text{
-    line-height: 1.6;
-    font-size: 17px;
-  }
-
-  .contact-button{
-    padding-left: 10px;
-  }
-
-  .error-msg{
-    color: $red;
-  }
-
-  .contact-sent{
+  .contact-sent {
     min-height: 339px;
-    text-align: center;
-    font-size: 17px;
-    color: #27AEE8;
+    text-align: center;  
   }
 
-  .form__group {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-  }
+  .contact-form {
 
-  .form__field {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid #d2d2d2;
-    outline: 0;
-    font-size: 16px;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-    resize: vertical;
-    color: #eee;
-  }
+    .form__group {
+      position: relative;
+      padding: 15px 0 0;
+      margin-top: 10px;
+    }
 
-  .form__field::placeholder {
-    color: transparent;
-  }
+    .error-msg {
+      color: red;
+    }
 
-  .form__field:placeholder-shown ~ .form__label {
-    font-size: 16px;
-    cursor: text;
-    top: 20px;
-  }
+    .form__field {
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid $lightgrey;
+      outline: 0;
+      font-size: 12px;
+      padding: 7px 0;
+      background: transparent;
+      transition: border-color 0.2s;
+      resize: vertical;
+      color:#fff;
+     }
 
-  label,
-  .form__field:focus ~ .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 12px;
-    color: #9b9b9b;
-  }
+    .form__field::placeholder {
+      color: transparent;
+    }
 
-  .form__field:focus ~ .form__label {
-    color: #27AEE8;
-  }
+    .form__field:placeholder-shown~.form__label {
+      font-size: 12px;
+      cursor: text;
+      top: 20px;
+    }
 
-  .form__field:focus {
-    padding-bottom: 6px;
-    border-bottom: 2px solid #27AEE8;
+    label,
+    .form__field:focus~.form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 10px;
+    }
+
+    .form__field:focus~.form__label {
+      color: $blue;
+    }
+
+    .form__field:focus {
+      padding-bottom: 6px;
+      border-bottom: 2px solid $blue;
+    }
   }
 
 }

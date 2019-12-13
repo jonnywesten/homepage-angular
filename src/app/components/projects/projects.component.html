@@ -1,41 +1,37 @@
-<div class="projects-container pt-5 pb-3">
+<div class="content pt-5 pb-3">
 
-  <div class="row my-5 py-3 mx-auto projects-inner">
+  <div class="row my-4  mx-auto">
 
     <div class="col-12">
-      <h4 class="mb-0">RECENT WORK</h4>
+      <h6 class="mb-0">Recent Work</h6>
       <h2 class="mt-0 mb-5">Projects</h2>
     </div>
   </div>
 
+  <div class="col-12 carousel mb-5">
 
-<div class="row projects-carousel mb-5">
     <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
-      <div *nguCarouselDef="let item;" class="item">
 
-        <div class="item-inner">
-          <div class="marvel-device macbook zoomOut">
-            <div class="top-bar"></div>
-            <div class="camera"></div>
-            <div class="screen"  [ngStyle]="{'background-image': 'url(./assets/img/thumb-'+item.index+'.jpg'}">               
-               <i class="mdi mdi-magnify-scan"></i>
-            </div>
-            <div class="bottom-bar"></div>
+      <div *nguCarouselDef="let item;" class="item">
+        <div class="card">
+          <div class="image" [ngStyle]="{'background-image': 'url(./assets/img/projects/'+item.img}"></div>
+          <h5 class="col-12 pt-4 pb-2 title">{{item.name}}</h5>
+          <p class="col-12 pb-3 subtitle">{{item.text}}</p>
+          <div class="col-12">
+            <div class="btn btn-dark red col-9 offset-3 mt-3 mb-4">Learn more..</div>
           </div>
         </div>
-        <div class="item-type">Subtitle</div>
-        <div class="item-name">{{item.name}}</div>
+
       </div>
 
       <div NguCarouselNext class="rightRs">
-        <i class="mdi mdi-arrow-right-bold"></i>
+        <i class="mdi mdi-chevron-right"></i>
       </div>
       <div NguCarouselPrev class="leftRs">
-        <i class="mdi mdi-arrow-left-bold"></i>
+        <i class="mdi mdi-chevron-left"></i>
       </div>
+ 
 
     </ngu-carousel>
- 
   </div>
- 
 </div>

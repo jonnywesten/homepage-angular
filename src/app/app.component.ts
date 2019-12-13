@@ -23,10 +23,8 @@ export class AppComponent implements OnInit {
     );
 
     setTimeout(()=>{
-      console.log("yo");
       document.getElementById('loading-overlay').style.opacity = '0';
     },500);
-    
     
   }
 
