@@ -49,6 +49,5 @@ export class NavMenuComponent implements OnInit {
     if(this.open){
       this.filled =  true;
     }
-
   }
 }

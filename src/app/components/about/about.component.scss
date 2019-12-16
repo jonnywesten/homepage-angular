@@ -5,13 +5,11 @@
   color: $lightgrey;
 
   img {
-    filter:brightness(0.6);
+    filter:brightness(0.8);
     width: 124px;
     max-width: 100%;
     border-radius: 3px;
-  
   }
-
 
   i {
     transition: all .15s linear;

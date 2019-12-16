@@ -9,6 +9,7 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
+  public techs = ["JavaScript (ES6+)", "HTML & (S)CSS", "React", "Vue", "Node.js", "Express", "GraphQL", "NativeScript"];
   ngOnInit() {
   }
 

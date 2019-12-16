@@ -4,6 +4,10 @@
   background: #fff;
   color: $darkblue;
 
+  #active-item{
+    transition: 0.2s all ease-out;
+  }
+
   .rightRs,
   .leftRs {
     font-size: 42px;
@@ -47,6 +51,8 @@
         background-position: 0% 0%;
         filter: grayscale(1);
         transition: all .2s linear;
+       
+       
 
         &.isActive {
           filter: grayscale(0);

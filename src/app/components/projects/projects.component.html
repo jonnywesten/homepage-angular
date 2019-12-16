@@ -15,10 +15,10 @@
     </p>
   </div>
 
-  <div class="col-12 my-3">
+  <div class="col-12 my-3" id="active-item">
     <div class="row">
 
-      <div class="col-sm-4">
+      <div class="col-sm-5">
 
         <h4>{{activeItem.name}}</h4>
 
@@ -36,13 +36,13 @@
           <span class="badge badge-dark">REST API</span>
         </p>
 
-        <div class="link mb-3">
+        <div class="link mb-4">
           <i class="mdi mdi-launch"></i>
           VISIT PAGE..
         </div>
       </div>
 
-      <div class="col-sm-8 order-first order-sm-last" style="min-height: 200px">
+      <div class="col-sm-7 order-first order-sm-last" style="min-height: 200px">
         <div class="image h-100" style="min-height: 200px; "
           [ngStyle]="{'background-image': 'url(./assets/img/projects/'+activeItem.img}">
         </div>
@@ -69,7 +69,7 @@
         <div class="image" [ngClass]="isActive(i)"
           [ngStyle]="{'background-image': 'url(./assets/img/projects/'+item.thumb}"></div>
         <h6 class="col-12 pt-3 pb-0 px-0 title">{{item.name}}</h6>
-        <p class="subtitle">{{item.text}}</p>
+        <p>{{item.text}}</p>
 
       </div>
 
