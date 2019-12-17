@@ -11,13 +11,43 @@ font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
 }
 
-
-#start{
-  height:100vh;
+.mdi-bg{
+  user-select: none;
+  position: absolute;
+  right: 0;
+  font-size: 47vh;
+  top: 0;
+  opacity: 0.02;
 }
 
-.content > div{
-  max-width: 900px;
+#start{
+  height:102vh;
+}
+
+.content{
+  max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+}
+
+
+a{
+  color: $lightblue;
+  transition: .2s ease-out;
+  &:hover{
+    color: #0074ff;
+    text-decoration: none;
+  }
+
+}
+h1{
+  font-size: 3.5rem;
+}
+
+.btn, p {
+  font-size: 14px;
+  &.text-large {
+    font-size: 18px;
+  }
 }
 

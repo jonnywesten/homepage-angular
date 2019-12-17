@@ -13,7 +13,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 102vh;
 }
 
 @-moz-document url-prefix() {
@@ -44,7 +44,7 @@
 
   .overlay {
     display: block;
-    background: linear-gradient(to top, #0d171f, #6c5b7b, #d4587b);
+    background: linear-gradient(to top, #0d171f, #6c5b7b, #d458ae);
     opacity: 0.25;
     z-index: 3;
   }
@@ -96,6 +96,7 @@
     bottom: 0;
     z-index: 4;
     box-shadow: 0 0 7vh -1vh #3e7ef5;
+    background: linear-gradient(to bottom, transparent 80%, #061624);
   }
 
   .ground {

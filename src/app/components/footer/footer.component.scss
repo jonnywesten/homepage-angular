@@ -1,7 +1,26 @@
 @import "../../../styles/colors";
 
-footer {
-  background: $darkblue;
-  color:$lightgrey;
-  position: relative;  
+.image{
+  background: url(https://img4.goodfon.com/wallpaper/nbig/e/b3/synthpop-synth-retrowave-muzyka-darkwave-zvezdy-synth-pop-sy.jpg) 50% 100%;
+  height: 160px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  
+  .footnote{
+    position: absolute;
+    top: 80%;
+    color: #e1e1e1;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .overlay{
+    height: 100%;
+    background: url(https://i.gifer.com/757H.gif);
+    opacity: 0.15;
+  }
 }
+
+
+
