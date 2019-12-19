@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, HostListener } from '@angular/core';
-import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
+import {Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, HostListener, ElementRef} from '@angular/core';
+import {NguCarousel, NguCarouselConfig} from '@ngu/carousel';
 
 @Component({
   selector: 'app-projects',
@@ -8,14 +8,15 @@ import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(private elRef: ElementRef,
+              private cdr: ChangeDetectorRef) {
   }
 
-  @ViewChild('myCarousel', { static: false }) myCarousel: NguCarousel<any>;
+  @ViewChild('myCarousel', {static: false}) myCarousel: NguCarousel<any>;
   carouselConfig: NguCarouselConfig = {
-    grid: { xs: 2, sm: 3, md: 3, lg: 3, all: 0 },
+    grid: {xs: 2, sm: 3, md: 3, lg: 3, all: 0},
     load: 6,
-    interval: { timing: 9999999, initialDelay: 9999999 },
+    interval: {timing: 9999999, initialDelay: 9999999},
     loop: true,
     touch: true,
     slide: 1,
@@ -29,37 +30,60 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     {
       name: 'Neurolympics.nl',
       text: 'Gamification - Brain-based assessment games',
-      thumb: 'nl-2.jpg',
-      img: 'nl-1.png'
+      thumb: 'nl-thumb.png',
+      img: 'nl-2.jpg',
+      url: 'https://neurolympics.nl/demo',
+      badges: ['JavaScript', 'jQuery', 'webGL', 'PixiJS', 'Bootstrap', 'REST Api'],
+      description: 'The NeurOlympics games measure cognitive abilities in a fun and playful way. ' +
+        'Released by <a href="https://brainsfirst.com/" target="_blank">BrainsFirst </a>' +
+        'the games are used for streamlining recruiting processes by companies such ' +
+        'as McKinsey, Deloitte and LVNL. <br/>The games and UI are mostly written jQuery and use pixiJS for delivering smooth webGL ' +
+        'performance. I\'ve been working as lead-frontend developer on this project for several years together with the ' +
+        'great guys from <a href="http://www.essentialsln.com/" target="_blank">Essential Solutions</a> who took care of the backend development.'
     },
     {
-      name: 'MetallRente',
-      text: 'IT Consulting - Angular, Bootstrap, Java Spring',
-      thumb: 'mr.png',
-      img: 'mr-1.png'
+      name: 'IT Consulting',
+      text: 'Full Stack Development - Angular, Java, Spring',
+      thumb: 'mr-thumb.png',
+      img: 'mr-3.jpg',
+      url: 'https://metallrente.com/aksr',
+      badges: ['JavaScript', 'TypeScript', 'Angular', 'Highcharts', 'Java', 'Spring', 'Maven'],
+      description: 'During the last years I have been working in an IT-Consultancy and developing highly-specialized software for the ' +
+        'insurance industry. <br/>Working on the front-, as well as on the backend I have been responsible for all steps in the user-interaction ' +
+        'form data input and validation to calculation using 3rd party software as well as PDF generation. <br/>It was great learning experience ' +
+        'working with complex datasets and agile software development (Scrum).'
     },
     {
       name: 'FließenConcept Eskuche',
       text: 'Simple One Pager - HTML5, Bootstrap, CSS3',
-      thumb: 'fce.png',
-      img: 'fce-2.png'
+      thumb: 'fce-thumb.png',
+      img: 'fce.png',
+      url: 'https://www.fliesenconcept-eskuche.biz/',
+      badges: ['Webdesign', 'Bootstrap', 'jQuery', 'Google Maps Api', 'HTML', 'CSS'],
+      description: 'A simple website I created for a friend of mine. He wanted a simple online representation of his business without ' +
+        'too much user interaction or dynamic content, so we decided to go for a simple one pager.<br/> The site was created within a few days by utilizing ' +
+        'a free HTML template based on Twitter Bootstrap and doing some customization.<br/> After we inserted the texts and images describing ' +
+        'his business my friend is very happy with his new homepage.'
     },
     {
       name: 'Neurolympics Dashboard',
       text: 'Data Management - React application, Material UI',
-      thumb: 'nld.jpg',
-      img: 'nld-1.png'
+      thumb: 'nld-thumb.png',
+      img: 'nld.jpg',
+      url: 'https://neurolympics.nl/dashboard',
+      badges: ['React', 'webpack', 'Material UI', 'ChartJS', 'SheetJS', 'REST Api'],
+      description: ''
     },
     {
       name: 'LiBo Chatbot',
       text: 'Chat application - Angular, PHP, Goolge Dialogflow',
-      thumb: 'libo-2.jpg',
+      thumb: 'libo-thumb.png',
       img: 'libo-1.png'
     },
     {
       name: 'aestheticology.net',
       text: 'Custom webdesign - Drupal website, HTML5, jQuery',
-      thumb: 'aest.jpg',
+      thumb: 'aes-thumb.png',
       img: 'aest.jpg'
     }
   ];
@@ -74,6 +98,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   selectItem(i: number) {
+
     document.getElementById('active-item').style.opacity = '0';
     setTimeout(() => {
       this.activeItem = this.items[i];
@@ -86,7 +111,6 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   isActive(i: number): string {
     return this.items.indexOf(this.activeItem) === i ? 'isActive' : '';
   }
-
 
 
 }

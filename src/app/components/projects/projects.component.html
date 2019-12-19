@@ -1,50 +1,40 @@
-<div class="content pt-5 pb-3">
+<div class="content">
 
-  <div class="row my-4  mx-auto">
+  <div class="col-12 p-5" id="active-item">
 
-    <div class="col-12">
-      <h6 class="mb-0">Recent Work</h6>
-      <h2 class="mt-0 mb-3">Projects</h2>
-    </div>
-  </div>
-
-  <div class="col-12 mb-4">
-    <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-      dolore magna aliquyam erat, sed diam voluptua.
-    </p>
-  </div>
-
-  <div class="col-12 my-3" id="active-item">
     <div class="row">
-
-      <div class="col-sm-5">
-
-        <h4>{{activeItem.name}}</h4>
-
-        <p class="mb-4">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua.
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua.
-        </p>
-
-        <p class="mb-4">
-          <span class="badge badge-dark">jQuery</span>
-          <span class="badge badge-dark">webGL</span>
-          <span class="badge badge-dark">Bootstrap</span>
-          <span class="badge badge-dark">REST API</span>
-        </p>
-
-        <div class="link mb-4">
-          <i class="mdi mdi-launch"></i>
-          VISIT PAGE..
-        </div>
+      <div class="col-12 order-first">
+        <h5 class="mb-0 lightblue">Recent Projects</h5>
+      </div>
+      <div class="col-12 order-first">
+        <h2 class="mt-1 mb-0">
+          {{activeItem.name}}
+        </h2>
       </div>
 
-      <div class="col-sm-7 order-first order-sm-last" style="min-height: 200px">
-        <div class="image h-100" style="min-height: 200px; "
-          [ngStyle]="{'background-image': 'url(./assets/img/projects/'+activeItem.img}">
+      <div class="mx-3 border-top my-3 w-100 order-first"></div>
+
+      <div class="col-sm-6 mt-4">
+
+        <p class="mb-4 item-description" [innerHTML]="activeItem.description">
+        </p>
+
+        <p class="mb-4">
+          <span *ngFor="let badge of activeItem.badges">
+            <div class="d-inline-block mt-2 mr-2 item-badge">{{badge}}</div>
+          </span>
+        </p>
+
+        <a class="item-link my-3" href="{{activeItem.url}}" target="_blank">
+          <i class="mdi mdi-launch"></i>
+          VISIT PAGE..
+        </a>
+      </div>
+
+
+      <div class="col-sm-6 mt-4 order-first order-sm-last item-image-container">
+        <div class="item-image h-100"
+             [ngStyle]="{'background-image': 'url(./assets/img/projects/'+activeItem.img}">
         </div>
       </div>
     </div>
@@ -57,20 +47,26 @@
         <i class="mdi mdi-chevron-left"></i>
       </div>
     </div>
-
   </div>
 
-  <div class="mb-5 d-none d-sm-block">
+  <div class="col-12 p-5 d-none d-sm-block">
 
     <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="items">
 
       <div *nguCarouselDef="let item;let i = index" class="item" (click)="selectItem(i)">
 
-        <div class="image" [ngClass]="isActive(i)"
-          [ngStyle]="{'background-image': 'url(./assets/img/projects/'+item.thumb}"></div>
-        <h6 class="col-12 pt-3 pb-0 px-0 title">{{item.name}}</h6>
-        <p>{{item.text}}</p>
+        <div class="row">
+          <div class="col-3 pr-0">
 
+            <div class="image" [ngClass]="isActive(i)"
+                 [ngStyle]="{'background-image': 'url(./assets/img/projects/'+item.thumb}"></div>
+          </div>
+          <div class="col-9">
+            <h5 class="col-12 pb-0 px-0 title">{{item.name}}</h5>
+            <p>{{item.text}}</p>
+          </div>
+
+        </div>
       </div>
 
       <div NguCarouselNext class="rightRs">

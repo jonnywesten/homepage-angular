@@ -1,11 +1,21 @@
 $red: #C20056;
 $blue: #3e7ef5;
 $lightgrey: #afbac7;
-$darkblue: #040814;
+$darkblue: #10141f;
 $lightblue: #5fa8ff;
 
 #about{
   background: linear-gradient(to bottom, #061624, #3e1025);
   background: linear-gradient(to bottom, #061624, #152e4c);
   color: $lightgrey;
+}
+
+#projects{
+  background: #152e4c;
+  color: $lightgrey;
+  padding-bottom: 5rem;
+}
+
+.lightblue{
+  color: $lightblue;
 }
