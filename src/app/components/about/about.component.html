@@ -5,7 +5,7 @@
 
   <div class="row mt-5 py-3 mx-auto about-inner">
     <div class="col-12">
-      <h5 class="mb-2">Hi, my name is Daniel Elport</h5>
+      <h5 class="mb-2 text-inherit">Hi, my name is Daniel Elport</h5>
     </div>
     <div class="col-md-9">
       <h1 class="mt-0 mb-3">
@@ -49,16 +49,16 @@
 
     <div class="row my-3 mx-auto">
 
-      <div *ngFor="let col of skills" class="col-4 mb-3 skill-col">
+      <div *ngFor="let col of skills" class="col-6 col-sm-4 mb-3 skill-col">
         <i class="mdi {{col.icon}}"></i>
         <h4>
           {{col.title}}
         </h4>
 
         <div class="row">
-          <div *ngFor="let item of col.items" class="col-12">
+          <p *ngFor="let item of col.items" class="col-12 mb-0">
             <span>{{item}}</span>
-          </div>
+          </p>
         </div>
 
       </div>

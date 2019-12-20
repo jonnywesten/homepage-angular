@@ -2,12 +2,18 @@
 
 
 .content {
-  background: rgba($darkblue, 0.95);
-  color: $lightgrey;
+
+  .mdi-bg {
+    bottom: auto;
+    top: -50vh;
+    right: auto;
+    left: -5vh;
+    transform: rotate(180deg);
+  }
 
   .contact-sent {
     min-height: 339px;
-    text-align: center;  
+    text-align: center;
   }
 
   .contact-form {
@@ -56,12 +62,12 @@
     }
 
     .form__field:focus~.form__label {
-      color: $blue;
+      color: $lightblue;
     }
 
     .form__field:focus {
       padding-bottom: 6px;
-      border-bottom: 2px solid $blue;
+      border-bottom: 2px solid $lightblue;
     }
   }
 

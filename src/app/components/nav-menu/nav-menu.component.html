@@ -16,16 +16,16 @@
   <div class="navbar-collapse" [ngClass]="{'collapse': !open}">
     <ul class="navbar-nav mr-0 ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Start</a>
+        <a class="nav-link" (click)="scrollToElement('#start')">Start</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About Me</a>
+        <a class="nav-link" (click)="scrollToElement('#about')">About Me</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Projects</a>
+        <a class="nav-link" (click)="scrollToElement('#projects')">Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" (click)="scrollToElement('#contact')">Contact</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Privacy</a>

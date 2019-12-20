@@ -19,3 +19,16 @@ $lightblue: #5fa8ff;
 .lightblue{
   color: $lightblue;
 }
+
+#contact{
+  background: linear-gradient(to bottom, #152e4c, #061624);
+  color: $lightgrey;
+}
+
+h1, h2 , h3, h4, h5, h6{
+  color: #fff;
+}
+
+.text-inherit{
+  color: inherit;
+}

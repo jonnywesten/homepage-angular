@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import smoothscroll from 'smoothscroll-polyfill/dist/smoothscroll.js';
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,46 +9,34 @@ import {Component, OnInit} from '@angular/core';
 export class NavMenuComponent implements OnInit {
 
   constructor() {
+    smoothscroll.polyfill();
   }
 
   public open = false;
   public filled = false;
 
-  public menuItems = [
-    {
-      title: 'Start',
-      icon: 'mdi-home'
-    },
-    {
-      title: 'About Me',
-      icon: 'mdi-human-greeting'
-    },
-    {
-      title: 'Projects',
-      icon: 'mdi-apps'
-    },
-    {
-      title: 'Contact',
-      icon: 'mdi-email'
-    }
-  ];
-
   ngOnInit() {
-    window.addEventListener('scroll', this.scroll, true); //third parameter
+    window.addEventListener('scroll', this.scroll, true);
     this.scroll();
+  }
+
+  scrollToElement(el): void {
+    const $element = document.querySelector(el);
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    this.open = false;
   }
 
   scroll = () => {
     this.filled = window.pageYOffset > window.innerHeight;
-  };
+  }
 
   toggleNav() {
     this.open = !this.open;
 
     this.scroll();
 
-    if(this.open){
-      this.filled =  true;
+    if (this.open) {
+      this.filled = true;
     }
   }
 }
