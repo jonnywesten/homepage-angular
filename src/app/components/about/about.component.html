@@ -8,15 +8,15 @@
       <h5 class="mb-2 text-inherit">Hi, my name is Daniel Elport</h5>
     </div>
     <div class="col-md-9">
-      <h1 class="mt-0 mb-3">
-        I create
-        <br class="d-md-none"/>
-        <div class="ml-md-3 animated-words">
+      <h1 class="mt-0 mb-3 mr-2">
+        I create&nbsp;
+        <br class="d-md-none" />
+        <div class="animated-words">
           <span>applications</span>
           <span>sites</span>
           <span>components</span>
         </div>
-        <br/>
+        <br />
         for the web.
       </h1>
     </div>
@@ -29,7 +29,8 @@
 
     <div class="col-md-12 mb-4">
       <p class="text-large">
-        I'm a frontend engineer based in Germany who enjoys building (and occasionally designing) exceptional, high-quality websites and applications.
+        I'm a frontend engineer based in Germany who enjoys building (and occasionally designing) exceptional,
+        high-quality websites and applications.
         Fork me on
         <a href="https://github.com/DanielElport?tab=repositories" target="_blank">GitHub</a>
         or see full resume at
@@ -38,32 +39,22 @@
       </p>
     </div>
 
-   <!-- <div class="col-md-2 text-left text-md-right">
-        <div class="btn mr-2 text-large">
-          <i class="mdi mdi-github-circle"></i>
-        </div>
-        <div class="btn text-large">
-          <i class="mdi mdi-linkedin-box"></i>
-        </div>
-    </div> -->
+    <div class="col-12">
+      <div class="row mt-3 mb-5  ">
 
-    <div class="row my-3 mx-auto">
+        <div *ngFor="let col of skills" class="col-6 col-sm-4 mb-3 skill-col">
+          <i class="mdi {{col.icon}}"></i>
+          <h4>
+            {{col.title}}
+          </h4>
 
-      <div *ngFor="let col of skills" class="col-6 col-sm-4 mb-3 skill-col">
-        <i class="mdi {{col.icon}}"></i>
-        <h4>
-          {{col.title}}
-        </h4>
-
-        <div class="row">
-          <p *ngFor="let item of col.items" class="col-12 mb-0">
+          <div *ngFor="let item of col.items">
             <span>{{item}}</span>
-          </p>
-        </div>
+          </div>
 
+        </div>
       </div>
     </div>
-
 
   </div>
 </div>

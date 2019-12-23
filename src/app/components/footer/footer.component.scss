@@ -1,19 +1,10 @@
 @import "../../../styles/colors";
 
-.image{
-  background: $darkblue;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+footer{
 
-  .footnote{
-    position: absolute;
-    top: 2em;
-    color: #eee;
-    width: 100%;
-    font-weight: bold;
-  }
+  background: $darkblue;
+  color: #eee;
+  
 
   .overlay{
     height: 100%;

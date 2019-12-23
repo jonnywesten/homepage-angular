@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -31,14 +31,15 @@ export class ContactComponent implements OnInit {
       this.errorMsg = 'Please enter a valid email address';
     } else {
 
-      this.http.post('http://code-smart.com/mail/contact_me.php',
-        {
-          name: this.name,
-          email: this.email,
-          message: this.message
-        }).toPromise().then(() => {
-        this.sent = true;
+      this.http.post('http://code-smart.com/mail/contact_me.php', {
+        name: this.name,
+        email: this.email,
+        message: this.message
       })
+        .toPromise()
+        .then(() => {
+          this.sent = true;
+        })
         .catch(() => {
           this.errorMsg = 'There was an error submitting the form. Please try again later.';
         });

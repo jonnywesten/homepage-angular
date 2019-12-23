@@ -26,7 +26,7 @@ export class AboutComponent implements OnInit {
       items: ['Git/SVN', 'npm', 'gulp', 'gradle', 'nginx', 'Docker', 'AWS']
     }
   ];
-
+  
   ngOnInit() {
   }
 

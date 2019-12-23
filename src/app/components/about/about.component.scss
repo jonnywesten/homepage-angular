@@ -27,7 +27,7 @@
 
   }
 
-  @-webkit-keyframes animateWord {
+  @keyframes animateWord {
     0% { opacity: 0; }
     2% { opacity: 0; -webkit-transform: translateY(-30px); }
     5% { opacity: 1; -webkit-transform: translateY(0px);}
