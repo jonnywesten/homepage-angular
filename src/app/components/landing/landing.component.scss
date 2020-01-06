@@ -37,7 +37,6 @@
     from {
       background-position: 0 0;
     }
-
     to {
       background-position: -10000px 5000px;
     }
@@ -125,7 +124,7 @@
     }
 
     @media (min-width: 1921px) {
-      transform: scale(1.4);
+      transform: scale(1.2);
       top: 16%;
     }
 
@@ -327,7 +326,6 @@
     from {
       transform: translateY(50vh)
     }
-
     to {
       transform: translateY(100vh)
     }
