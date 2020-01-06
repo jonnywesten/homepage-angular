@@ -1,5 +1,6 @@
 @import "../../../styles/colors";
-.navbar{
+
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -8,9 +9,9 @@
   padding: 0 1rem;
 
 
-  &.filled{
-    background: rgba(#040814, 0.95);
- 
+  &.filled {
+    background: rgba($darkblue, 0.95);
+
   }
 
   .navbar-toggler {
@@ -23,46 +24,42 @@
     width: 3.5em;
     outline: none !important;
 
-}
+  }
 
-  .nav-item{
+  .nav-item {
     transition: .1s color linear;
-    &:hover{
+    cursor: pointer;
+    &:hover {
       color: #fff;
     }
   }
 
-  .navbar-collapse{
+  .navbar-collapse {
     transition: .2s all ease-in;
-    height: 218px;
-    max-height: 218px;
-    @media screen and (max-width:768px){
-      
-    overflow: hidden;
+    padding-bottom: 10px;
+    @media screen and (max-width: 768px) {
+
+      overflow: hidden;
     }
   }
 
   .navbar-collapse.collapse:not(.show) {
     max-height: 0;
-    height: 0px;
-     display: block;
+    height: 0;
+    padding-bottom: 0;
+    display: block;
   }
 }
 
-span.code{
+span.code {
   font-family: 'Orbitron', sans-serif;
-
 }
 
-.smart{
-  font-family: "Indelible", cursive;
-
-}
 
 
 .threebar {
   position: relative;
-  height: 3em; 
+  height: 3em;
 
   .bar {
     position: absolute;

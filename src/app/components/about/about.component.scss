@@ -22,9 +22,7 @@
       &:nth-child(3) {
         animation-delay: 6s;
       }
-
     }
-
   }
 
   @keyframes animateWord {
@@ -51,18 +49,12 @@
     }
   }
 
-  img {
+  .face {
     filter:brightness(0.8);
     width: 100px;
     max-width: 100%;
     border-radius: 3px;
+    background: url(../../../assets/img/me.png) no-repeat center center;
+    background-size: contain;
   }
-
- /* i {
-    transition: all .15s linear;
-    cursor: pointer;
-    &:hover {
-      color: #fff;
-    }
-  }*/
 }

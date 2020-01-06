@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
       this.errorMsg = 'Please enter a valid email address';
     } else {
 
-      this.http.post('http://code-smart.com/mail/contact_me.php', {
+      this.http.post('https://code-smart.com/mail/contact_me.php', {
         name: this.name,
         email: this.email,
         message: this.message

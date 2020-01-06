@@ -12,7 +12,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 102vh;
 }
 
@@ -45,7 +45,7 @@
 
   .overlay {
     display: block;
-    background: linear-gradient(to top, #0000002b 25%, #bd1d93 25%, #61348e);
+    background: linear-gradient(to top, #0000002b 25%, #61348e 25%, #bd1d93);
     opacity: 0.3;
     z-index: 3;
   }

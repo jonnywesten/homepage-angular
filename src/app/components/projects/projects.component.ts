@@ -52,7 +52,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
         'working with complex datasets, server infrastructure and agile software development (Scrum).'
     },
     {
-      name: 'FließenConcept Eskuche',
+      name: 'FliesenConcept Eskuche',
       thumb: 'fce-thumb.jpg',
       img: 'fce.jpg',
       url: 'https://www.fliesenconcept-eskuche.biz/',
@@ -81,7 +81,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       description: 'Live Traffic information - LiBO offers life information on public transport routes, arrivals and departure times. Google Dialogflow ' +
         'is used for natural language processing (NLP). <br/>A WebSocket based backend written in PHP offers live monitoring of chats and the option ' +
         'for manual answers. LiBO ist intergrated within a Typo3 website via HTML snippet as an angular frontend as well as within a chatbot ' +
-        'within a facebook business page.'
+        'in a facebook business page.'
     },
     {
       name: 'aestheticology.net',

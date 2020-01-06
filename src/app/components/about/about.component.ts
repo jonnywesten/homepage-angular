@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
 
   public skills = [
     {
-      icon: 'mdi-codepen',
+      icon: 'mdi-language-java',
       title: 'Languages',
       items: ['JavaScript (ES6)', 'TypeScript', 'HTML', '(S)CSS', 'Java', 'PHP', 'R']
     },
@@ -21,12 +21,12 @@ export class AboutComponent implements OnInit {
       items: ['Angular', 'React', 'Bootstrap', 'nodeJS', 'Spring']
     },
     {
-      icon: 'mdi-cog-clockwise',
+      icon: 'mdi-centos',
       title: 'Tools',
       items: ['Git/SVN', 'npm', 'gulp', 'gradle', 'nginx', 'Docker', 'AWS']
     }
   ];
-  
+
   ngOnInit() {
   }
 
