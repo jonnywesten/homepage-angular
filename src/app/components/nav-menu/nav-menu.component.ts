@@ -24,6 +24,7 @@ export class NavMenuComponent implements OnInit {
   }
 
   openPrivacyModal() {
+    this.open = false;
     this.bsModalRef = this.modalService.show(PrivacyComponent, {});
     this.bsModalRef.content.closeBtnName = 'Close';
   }
@@ -36,7 +37,7 @@ export class NavMenuComponent implements OnInit {
 
   scroll = () => {
     this.filled = window.pageYOffset > window.innerHeight;
-  };
+  }
 
   toggleNav() {
     this.open = !this.open;

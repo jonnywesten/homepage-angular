@@ -2,7 +2,9 @@
 
 .modal-dialog {
   max-width: 90%;
-
+  @media screen and (max-width: 576px){
+    max-width: 100%;
+  }
 
   .modal-content {
     border-radius: 2px;
@@ -33,9 +35,5 @@
         border-color: #ccc;
       }
     }
-
   }
-
-
-
 }

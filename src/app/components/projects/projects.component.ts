@@ -102,8 +102,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       img: 'aes.jpg',
       url: 'https://aestheticology.net',
       badges: ['Drupal', 'CMS', 'HTML', 'CSS', 'jQuery'],
-      description: 'Drupal website - Aestheticology.net is website for UK-based aesthetic Doctor Kam Lally, who offers non-surgical facial ' +
-        'rejuvenation using dermal fillers and anti-wrinkle injections. <br/>I created a custom Drupal website for him based on the desgin of his ' +
+      description: 'Drupal website - Aestheticology.net is a website for UK-based aesthetic Doctor Kam Lally, who offers non-surgical facial ' +
+        'rejuvenation using dermal fillers and anti-wrinkle injections. <br/>I created a Drupal website with a customized theme based on the desgin of his ' +
         'already existing print marketing material. The website also incorparates the use of some 3rd party APIs such as Google Maps and Mailchimp.<br/>' +
         'I did not get paid for this project, but instead Kam generously injected botox into my face.'
     }

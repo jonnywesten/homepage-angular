@@ -1,16 +1,15 @@
-@import "styles/vendor/bootstrap.css";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "styles/colors";
 @import "styles/buttons";
 @import "styles/modal";
 
 html,body {
 font-family: 'Noto Sans', sans-serif;
-  margin: 0px;
+  margin: 0;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  width: 100vw;
 }
 h1,h2,h3,h4,h5,h6, .link{
   font-family: 'Fjalla One', sans-serif;
@@ -35,7 +34,6 @@ h1,h2,h3,h4,h5,h6, .link{
   position: relative;
 }
 
-
 a{
   color: $lightblue;
   transition: .2s ease-out;
@@ -46,8 +44,12 @@ a{
 
 }
 h1{
-  font-size: 3.5rem;
+  font-size: 4rem;
+  @media screen and (max-width: 992px){
+    font-size: 3.5rem;
+  }
 }
+
 
 h2{
   font-size: 2.8rem;
