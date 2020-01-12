@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
     },
     {
       icon: 'mdi-centos',
-      title: 'Tools',
+      title: 'Workflow Tools',
       items: ['Git/SVN', 'npm', 'gulp', 'gradle', 'nginx', 'Docker', 'AWS']
     }
   ];

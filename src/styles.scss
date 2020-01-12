@@ -1,14 +1,19 @@
 @import "styles/vendor/bootstrap.css";
 @import "styles/colors";
 @import "styles/buttons";
+@import "styles/modal";
 
 html,body {
-font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans', sans-serif;
   margin: 0px;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100vw;
+}
+h1,h2,h3,h4,h5,h6, .link{
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .mdi-bg{

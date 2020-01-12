@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import smoothscroll from 'smoothscroll-polyfill/dist/smoothscroll.js';
+import {BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
+import {PrivacyComponent} from '../privacy/privacy.component';
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,7 +10,8 @@ import smoothscroll from 'smoothscroll-polyfill/dist/smoothscroll.js';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor() {
+  constructor(private bsModalRef: BsModalRef,
+              private modalService: BsModalService) {
     smoothscroll.polyfill();
   }
 
@@ -20,6 +23,11 @@ export class NavMenuComponent implements OnInit {
     this.scroll();
   }
 
+  openPrivacyModal() {
+    this.bsModalRef = this.modalService.show(PrivacyComponent, {});
+    this.bsModalRef.content.closeBtnName = 'Close';
+  }
+
   scrollToElement(el): void {
     const $element = document.querySelector(el);
     $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
@@ -28,7 +36,7 @@ export class NavMenuComponent implements OnInit {
 
   scroll = () => {
     this.filled = window.pageYOffset > window.innerHeight;
-  }
+  };
 
   toggleNav() {
     this.open = !this.open;

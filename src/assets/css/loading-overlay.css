@@ -42,11 +42,11 @@
 }
 
 .spinner:before {
-  border-top-color: #66e6ff;
+  border-top-color: #2B5AC8;
 }
 
 .spinner:after {
-  border-top-color: #f0db75;
+  border-top-color: #3e7ef5;
   animation-delay: 0.3s;
 }
 

@@ -1,0 +1,41 @@
+@import "colors";
+
+.modal-dialog {
+  max-width: 90%;
+
+
+  .modal-content {
+    border-radius: 2px;
+    background: lighten($darkblue, 10%);
+    border:none;
+
+    .modal-header{
+      background: $darkblue;
+      border:none;
+      .close {
+        color:#fff;
+      }
+    }
+    .modal-body{
+      max-height: 70vh;
+      overflow-y: scroll;
+      border:none;
+      p{
+        color:#bbb;
+      }
+    }
+
+    .modal-footer {
+      background: $darkblue;
+      border:none;
+      .link:hover {
+        color: #ccc;
+        border-color: #ccc;
+      }
+    }
+
+  }
+
+
+
+}

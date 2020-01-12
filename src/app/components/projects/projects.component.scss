@@ -4,6 +4,7 @@
   background: $darkblue;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
   z-index: 1;
+  overflow: hidden;
 
   @media screen and (max-width: 1030px) {
     margin: 0 15px;
@@ -13,7 +14,6 @@
   #active-item {
     transition: 0.2s all ease-out;
     background: rgba(255, 255, 255, 0.03);
-
 
     .item-description-container {
       min-height: 300px;
@@ -44,8 +44,17 @@
       }
     }
 
-    .rightRs,
-    .leftRs {
+    &:hover{
+      .rightRs, .leftRs{
+        opacity: 1;
+      }
+    }
+    @media screen and (max-width: 768px){
+      .rightRs, .leftRs{
+        opacity: 1;
+      }
+    }
+    .rightRs, .leftRs {
       top: 230px;
     }
 
@@ -58,13 +67,24 @@
     height: 42px;
     line-height: 1;
     position: absolute;
-    top: 13px;
+    top: 5px;
     left: -13px;
+    opacity: 0;
+    transition: .2s opacity linear;
   }
 
   .rightRs {
     left: auto;
     right: -13px;
+  }
+
+  .item-carousel{
+    &:hover{
+      .rightRs,
+      .leftRs{
+        opacity: 1;
+      }
+    }
   }
 
   ngu-carousel {
@@ -90,15 +110,10 @@
         border-radius: 50%;
         background-size: cover;
         background-position: 50% 50%;
-        /*filter: grayscale(1);*/
         transition: .0s linear;
         margin-right: 0;
         margin-left: auto;
         border: 3px solid #adadad;
-
-        &.isActive {
-          filter: grayscale(0);
-        }
       }
     }
   }

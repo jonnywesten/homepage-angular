@@ -44,7 +44,7 @@
 
   .overlay {
     display: block;
-    background: linear-gradient(to top,#0000002b 25%,#340069 25%,#ff00bc);
+    background: linear-gradient(to top, #0000002b 25%, #bd1d93 25%, #61348e);
     opacity: .4;
     z-index: 3;
   }
@@ -281,7 +281,7 @@
     }
 
     .gridInner {
-      animation: animatedGrid 24s linear infinite;
+      animation: animatedGrid 30s linear infinite;
 
       .grid-x,
       .grid-y {

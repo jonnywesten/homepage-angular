@@ -3,14 +3,15 @@ $blue: #3e7ef5;
 $lightgrey: #afbac7;
 $darkblue: #10141f;
 $lightblue: #5fa8ff;
+$page-bg: #11254c;
 
 #about{
-  background: linear-gradient(to bottom, #061624, #152e4c);
+  background: linear-gradient(to bottom, #061624, $page-bg);
   color: $lightgrey;
 }
 
 #projects{
-  background: #152e4c;
+  background: $page-bg;
   color: $lightgrey;
   padding-bottom: 5rem;
 }
@@ -20,7 +21,7 @@ $lightblue: #5fa8ff;
 }
 
 #contact{
-  background:  #152e4c;
+  background: $page-bg;
   color: $lightgrey;
 }
 
