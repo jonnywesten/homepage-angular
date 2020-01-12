@@ -6,11 +6,6 @@
   z-index: 1;
   overflow: hidden;
 
-  @media screen and (max-width: 1030px) {
-    margin: 0 15px;
-  }
-
-
   #active-item {
     transition: 0.2s all ease-out;
     background: rgba(255, 255, 255, 0.03);
