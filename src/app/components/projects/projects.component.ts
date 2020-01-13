@@ -47,7 +47,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       url: 'https://news.code-smart.com',
       badges: ['TypeScript', 'React', 'Bootstrap', 'GitHub', 'Bootstrap', 'REST API'],
       description: 'News Feed App written in React and TypeScript. The Code Smart News display the latest news by connecting to the ' +
-        '<a href="https://https://open-platform.theguardian.com/" target="_blank">' +
+        '<a href="https://open-platform.theguardian.com/" target="_blank">' +
         'Guardian Open Platform API</a> which is really awesome, since it is free and offers (small) images, full text and article access by id. <br/>Basically it is just ' +
         'an example project to feature some code on GitHub, but it was also really fun to create. It is possible to browse articles vie endless scroll, search for articles ' +
         'and also directly access articles or sections via deep linking. The full code is also on ' +
@@ -104,7 +104,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       badges: ['Drupal', 'CMS', 'HTML', 'CSS', 'jQuery'],
       description: 'Drupal website - Aestheticology.net is a website for UK-based aesthetic Doctor Kam Lally, who offers non-surgical facial ' +
         'rejuvenation using dermal fillers and anti-wrinkle injections. <br/>I created a Drupal website with a customized theme based on the desgin of his ' +
-        'already existing print marketing material. The website also incorparates the use of some 3rd party APIs such as Google Maps and Mailchimp.<br/>' +
+        'already existing print marketing material. The website also incorparates the use of some 3rd party APIs such as Google Maps and Mailchimp.' +
         'I did not get paid for this project, but instead Kam generously injected botox into my face.'
     }
   ];

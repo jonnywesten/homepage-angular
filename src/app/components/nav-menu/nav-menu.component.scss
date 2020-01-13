@@ -50,11 +50,15 @@
   }
 }
 
-span.code {
+.code {
   font-family: 'Orbitron', sans-serif;
 }
 
+.smart {
+  font-family: 'indelible', sans-serif;
+  transform: skew(-5deg) rotate(-10deg);
 
+}
 
 .threebar {
   position: relative;
