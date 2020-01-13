@@ -44,9 +44,9 @@
 
   .overlay {
     display: block;
-    background: linear-gradient(to top, #0000002b 26%, #bd1d93 25%, #61348e);
+    background: linear-gradient(to top, rgba(0,0,0,0.16) 26%, #3275e0 25%, #041424);
     animation: sunrise-glow 10s ease-out;
-    animation-delay: 3s;
+    animation-delay: 1s;
     z-index: 3;
     animation-fill-mode: both;
   }
@@ -55,29 +55,27 @@
       opacity: .1;
     }
     to {
-      opacity: .2;
+      opacity: .4;
     }
   }
 
-
   .sun {
     animation: sunrise 10s ease-out;
-    animation-delay: 3s;
-    background: linear-gradient(to bottom, #FFFF05 0%, #FF4700 50%);
+    background: linear-gradient(to bottom, #3079e4 0%, #163f76 50%);
     border-radius: 50%;
-    box-shadow: 0 0 26px 20px rgba(255, 255, 5, 0.5);
+    box-shadow: 0 0 26px 20px rgb(49, 118, 226);
     position: absolute;
     z-index: 1;
     height: 36vw;
     width: 36vw;
     left: calc(50% - 18vw);
+    top:75%;
     animation-fill-mode: both;
 
     @media (min-width: 1440px) {
       height: 520px;
       width: 520px;
       left: calc(50% - 260px);
-      top: calc(75% - 520px);
     }
 
     &:after {
@@ -92,10 +90,10 @@
   }
   @keyframes sunrise {
     from {
-      top: calc(75% - 0vw);
+      transform: translateY(0%);
     }
     to {
-      top: calc(75% - 36vw);
+      transform: translateY(-100%);
     }
   }
 
@@ -127,6 +125,7 @@
     background: black;
     bottom: 0;
     z-index: 1;
+    overflow: hidden;
   }
 
   .logo {
@@ -211,7 +210,8 @@
       user-select: none;
 
       @media (min-width: 768px) and (min-height: 768px) {
-        background: $logored -webkit-gradient(linear, left top, right top, from(#cc0000), to(#cc0000), color-stop(0.5, #fff)) 0 0 no-repeat;
+        color: rgba($logored, 0.7);
+        background: $logored -webkit-gradient(linear, left top, right top, from($logored), to($logored), color-stop(0.5, #fff)) 0 0 no-repeat;
         -webkit-background-size: 300px;
         -webkit-background-clip: text;
         -webkit-animation-name: shine;
@@ -247,16 +247,14 @@
   .midnightGrid {
     position: absolute;
     z-index: 2;
-    top: 75%;
     width: 100%;
     height: 100%;
     transform-origin: 50% 0%;
     transform: perspective(40vh) rotateX(77deg);
-    overflow-y: hidden;
 
     &:after {
       content: "";
-      background: linear-gradient(to top, rgba(0, 50, 100, 0.15) 60%, rgba(28, 126, 224, 0.35) 90%);
+      background: linear-gradient(to top, rgba(0, 50, 100, 0.15), rgba(28, 126, 224, 0.4));
       display: block;
       position: relative;
       height: 100%;

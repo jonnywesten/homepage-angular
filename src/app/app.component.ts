@@ -25,6 +25,10 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       document.getElementById('loading-overlay').style.opacity = '0';
     }, 500);
+
+    setTimeout(() => {
+      document.getElementById('loading-overlay').style.display = 'none';
+    }, 2000);
   }
 
   load(...args: any[]): void {
