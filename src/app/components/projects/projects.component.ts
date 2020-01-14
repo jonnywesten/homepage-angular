@@ -49,9 +49,11 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   selectItem(i: number, directionRight?: boolean) {
 
+    this.activeItemIndex = i;
+
     document.getElementById('active-item').style.opacity = '0';
     setTimeout(() => {
-      this.activeItem = this.items[i];
+      this.activeItem = this.items[this.activeItemIndex];
       document.getElementById('active-item').style.opacity = '1';
     }, 200);
   }
@@ -67,7 +69,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   selectPrevious() {
     this.activeItemIndex--;
-    if (this.activeItemIndex <= 0) {
+    if (this.activeItemIndex < 0) {
       this.activeItemIndex = this.items.length - 1;
     }
     this.selectItem(this.activeItemIndex);

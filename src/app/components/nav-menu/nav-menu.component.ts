@@ -16,11 +16,8 @@ export class NavMenuComponent implements OnInit {
   }
 
   public open = false;
-  public filled = false;
 
   ngOnInit() {
-    window.addEventListener('scroll', this.scroll, true);
-    this.scroll();
   }
 
   openPrivacyModal() {
@@ -35,17 +32,7 @@ export class NavMenuComponent implements OnInit {
     this.open = false;
   }
 
-  scroll = () => {
-    this.filled = window.pageYOffset > window.innerHeight;
-  }
-
   toggleNav() {
     this.open = !this.open;
-
-    this.scroll();
-
-    if (this.open) {
-      this.filled = true;
-    }
   }
 }
