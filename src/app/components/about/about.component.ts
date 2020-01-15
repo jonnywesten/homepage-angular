@@ -18,11 +18,11 @@ export class AboutComponent implements OnInit {
     {
       icon: 'mdi-electron-framework',
       title: 'Frameworks',
-      items: ['Angular', 'React', 'Bootstrap', 'nodeJS', 'Spring']
+      items: ['Angular', 'React', 'Bootstrap', 'Material Design', 'nodeJS', 'Spring']
     },
     {
       icon: 'mdi-centos',
-      title: 'Workflow Tools',
+      title: 'Tools',
       items: ['Git/SVN', 'npm', 'gulp', 'gradle', 'nginx', 'Docker', 'AWS']
     }
   ];

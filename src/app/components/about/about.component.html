@@ -1,59 +1,44 @@
-<div class="content pt-5 pb-5">
+<div class="content  pb-5">
 
   <i class="mdi mdi-periodic-table mdi-bg"></i>
 
-
-  <div class="row mt-5 py-3 mx-auto about-inner">
+  <div class="row pb-3 mx-auto about-inner">
+    <!--
     <div class="col-12">
-      <h5 class="mb-2 text-inherit">Hello World</h5>
-    </div>
-    <div class="col-sm-9">
-      <h1 class="mt-0 mb-3 mr-2">
-        I create&nbsp;
-        <br class="d-sm-none" />
-        <div class="animated-words">
-          <span>applications</span>
-          <span>sites</span>
-          <span>components</span>
-        </div>
-        <br />
-        for the web.
-      </h1>
+      <h5 class="mb-2 text-inherit">Tech Stack</h5>
+      <h2 class="mt-0 mb-3 mr-2">
+        Skills Overview
+      </h2>
     </div>
 
-    <div class="col-sm-3">
-      <div class="face float-left float-sm-right"></div>
-    </div>
-
-    <div class="mx-3 border-top my-3 w-100"></div>
+    <div class="mx-3 border-top my-2 w-100"></div>
 
     <div class="col-md-12 mb-4">
       <p class="">
-        Hi, my name is Daniel Elport, I'm a frontend engineer based in Germany who enjoys building (and occasionally designing) exceptional,
-        high-quality websites and applications.
-        Check out my
-        <a href="https://codepen.io/codesmart1/full/PowadJY" target="_blank">CodePen</a>,
-        fork me on
-        <a href="https://github.com/DanielElport?tab=repositories" target="_blank">GitHub</a>
-        or see my full resume at
-        <a href="https://www.linkedin.com/in/daniel-elport-a86b93123/" target="_blank">LinkedIn.</a>
-
+        I have more than 8 years' experience building rich web applications for clients all over the world. Below is a
+        quick overview of my main technical skill sets and tools I use. Want to find out more about my experience? Check
+        out my online resume.
       </p>
     </div>
+    -->
 
-    <div class="col-12">
-      <div class="row mt-3 mb-5  ">
-
-        <div *ngFor="let col of skills" class="col-6 col-sm-4 mb-3 skill-col">
-          <i class="mdi {{col.icon}}"></i>
-          <h4>
-            {{col.title}}
-          </h4>
-
-          <div *ngFor="let item of col.items">
-            <span>{{item}}</span>
+    <div class="col-12 skill-container">
+      <div class="row mb-5">
+        <div *ngFor="let col of skills" class="col-6 col-sm-4 mb-5 skill-col">
+          <div class="skill-col-inner h-100">
+            <div class="skill-col-header text-center pb-2">
+              <i class="mdi {{col.icon}} skill-col-icon"></i>
+              <h4>
+                {{col.title}}
+              </h4>
+            </div>
+            <div class="skill-col-list">
+              <div *ngFor="let item of col.items">
+                <i class="mdi mdi-check lightblue mr-3 font-weight-bold"></i>
+                <span>{{item}}</span>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>

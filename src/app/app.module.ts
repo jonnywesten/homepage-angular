@@ -5,7 +5,6 @@ import {FormsModule} from '@angular/forms';
 import {NguCarouselModule} from '@ngu/carousel';
 
 import {AppComponent} from './app.component';
-import {LandingComponent} from './components/landing/landing.component';
 import {NavMenuComponent} from './components/nav-menu/nav-menu.component';
 import {AboutComponent} from './components/about/about.component';
 import {ContactComponent} from './components/contact/contact.component';
@@ -14,18 +13,19 @@ import {ProjectsComponent} from './components/projects/projects.component';
 import {MyHammerConfig} from './config/my-hammer.config';
 import {BsModalRef, BsModalService, ModalModule} from 'ngx-bootstrap';
 import {PrivacyComponent} from './components/privacy/privacy.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
     NavMenuComponent,
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
