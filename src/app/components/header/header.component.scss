@@ -20,6 +20,10 @@
 img{
   max-height: 150px;
   filter: brightness(0.75);
+  @media screen and (max-width: 768px){
+    max-height: 127px;
+
+  }
 }
 
 .animated-words {
