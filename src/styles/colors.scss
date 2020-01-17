@@ -3,11 +3,12 @@ $lightgrey: #afbac7;
 $darkblue: #10141f;
 $lightblue: #5fa8ff;
 
-$page-bg: #182640;
+$page-bg: #263c65;
 
 body{
   background: $page-bg;
   color: $lightgrey;
+
 }
 
 .lightblue{
@@ -20,4 +21,14 @@ h1, h2 , h3, h4, h5, h6{
 
 .text-inherit{
   color: inherit;
+}
+
+a{
+  color: #fff;
+  transition: .2s ease-out;
+  &:hover{
+    color: $blue;
+    text-decoration: none;
+  }
+
 }

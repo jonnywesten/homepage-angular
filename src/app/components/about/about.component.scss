@@ -14,12 +14,12 @@
     font-size: 13px;
 
     &-inner{
-      background: #171b26;
+      background: $darkblue;
       box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
     }
 
     &-header{
-      background: lighten($page-bg, 10%);
+      background: #171b26;
     }
     &-icon {
       color: #fff;

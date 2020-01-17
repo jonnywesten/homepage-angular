@@ -4,17 +4,19 @@
 }
 
 .background{
-  background: url(https://images.pexels.com/photos/34069/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 50% 66%;
+  background:
+    url(https://images.pexels.com/photos/705164/computer-laptop-work-place-camera-705164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 50% 66%,
+    radial-gradient(
+        rgba($darkblue,.9),
+        #111
+    ),
+    repeating-linear-gradient(
+        transparent 0,
+        rgba(0,0,0,.2) 3px,
+        transparent 6px
+    );
+  background-blend-mode: overlay;
   background-size: cover;
-  position: relative;
-}
-
-.background-overlay{
-  background: $darkblue;
-  opacity: 0.95;
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 
 img{
