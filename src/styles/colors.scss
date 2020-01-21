@@ -1,9 +1,9 @@
-$blue: #3e7ef5;
-$lightgrey: #afbac7;
-$darkblue: #10141f;
-$lightblue: #5fa8ff;
+$white: #fff;
+$lightgrey: #cacaca;
+$darkblue: #060713;
+$lightblue: #638EF2;
+$page-bg: #25314c;
 
-$page-bg: #263c65;
 
 body{
   background: $page-bg;
@@ -16,7 +16,7 @@ body{
 }
 
 h1, h2 , h3, h4, h5, h6{
-  color: #fff;
+  color: $white;
 }
 
 .text-inherit{
@@ -24,10 +24,10 @@ h1, h2 , h3, h4, h5, h6{
 }
 
 a{
-  color: #fff;
+  color: $white;
   transition: .2s ease-out;
   &:hover{
-    color: $blue;
+    color: $lightgrey;
     text-decoration: none;
   }
 

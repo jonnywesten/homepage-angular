@@ -10,7 +10,7 @@
 
 
   &.filled {
-    background: rgba($darkblue, 0.95);
+    background: $darkblue;
 
   }
 
@@ -29,7 +29,7 @@
     transition: .1s color linear;
     cursor: pointer;
     &:hover {
-      color: #fff;
+      color: $white;
     }
   }
 
@@ -64,7 +64,7 @@
     position: absolute;
     width: 2em;
     height: 3px;
-    background: #ccc;
+    background: $lightgrey;
     top: 1em;
     transition: all 0.5s ease;
 
@@ -93,7 +93,7 @@
 
   &:hover {
     .bar {
-      background: #fff;
+      background: $white;
     }
   }
 }

@@ -1,4 +1,4 @@
-<div class="content" *ngIf="items.length > 0">
+<div class="content boxed" *ngIf="items.length > 0">
 
   <div class="col-12 p-5" id="active-item"
        (swipeleft)="selectNext()"
@@ -6,7 +6,7 @@
 
     <div class="row">
       <div class="col-12 order-first">
-        <h5 class="mb-0 lightblue">Recent Projects</h5>
+        <h5 class="mb-0 lightblue">Featured Project</h5>
       </div>
       <div class="col-12 order-first">
         <h2 class="mt-1 mb-0">
@@ -34,7 +34,7 @@
       </div>
 
       <div class="col-md-6 mt-4 order-first order-md-last item-image-container">
-        <div class="item-image h-100" [style.background-image]="'url(./assets/img/projects/'+ activeItem.img + ')'">
+        <div class="item-image h-100 boxed" [style.background-image]="'url(./assets/img/projects/'+ activeItem.img + ')'">
         </div>
       </div>
     </div>

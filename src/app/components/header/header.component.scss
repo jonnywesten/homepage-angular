@@ -1,58 +1,72 @@
 @import "../../../styles/colors";
-.content{
-  padding: 100px 15px !important;
-}
 
-.background{
-  background:
-    url(https://images.pexels.com/photos/705164/computer-laptop-work-place-camera-705164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 50% 66%,
-    radial-gradient(
-        rgba($darkblue,.9),
-        #111
-    ),
-    repeating-linear-gradient(
-        transparent 0,
-        rgba(0,0,0,.2) 3px,
-        transparent 6px
-    );
+.background {
+  background: url(https://images.pexels.com/photos/218863/pexels-photo-218863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 50% 66%, rgba(6, 7, 13, 0.85);
   background-blend-mode: overlay;
   background-size: cover;
 }
 
-img{
-  max-height: 150px;
-  filter: brightness(0.75);
-  @media screen and (max-width: 768px){
-    max-height: 127px;
+.content {
+  padding: 100px 15px !important;
 
-  }
-}
-
-.animated-words {
-  display: inline;
-
-  span {
-    position: absolute;
-    opacity: 0;
-    overflow: hidden;
-    color: $lightblue;
-    animation: animateWord 9s ease-out infinite 0s;
-
-    &:nth-child(2) {
-      animation-delay: 3s;
-    }
-    &:nth-child(3) {
-      animation-delay: 6s;
+  .profile-image {
+    max-width: 100%;
+    background: url(../../../assets/img/me.png) no-repeat center center;
+    background-size: contain;
+    max-height: 150px;
+    filter: brightness(0.8);
+    border-radius: 3px;
+    @media screen and (max-width: 768px) {
+      max-height: 127px;
     }
   }
-}
 
-@keyframes animateWord {
-  0% { opacity: 0; }
-  2% { opacity: 0; -webkit-transform: translateY(-30px); }
-  5% { opacity: 1; -webkit-transform: translateY(0px);}
-  27% { opacity: 1; -webkit-transform: translateY(0px); }
-  30% { opacity: 0; -webkit-transform: translateY(30px); }
-  80% { opacity: 0; }
-  100% { opacity: 0; }
+
+  .animated-words {
+    display: inline;
+
+    span {
+      position: absolute;
+      opacity: 0;
+      overflow: hidden;
+      color: $lightblue;
+      animation: animateWord 9s ease-out infinite 0s;
+
+      &:nth-child(2) {
+        animation-delay: 3s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 6s;
+      }
+    }
+  }
+
+  @keyframes animateWord {
+    0% {
+      opacity: 0;
+    }
+    2% {
+      opacity: 0;
+      -webkit-transform: translateY(-30px);
+    }
+    5% {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+    }
+    27% {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+    }
+    30% {
+      opacity: 0;
+      -webkit-transform: translateY(30px);
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }

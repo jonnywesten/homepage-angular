@@ -7,7 +7,7 @@
     bottom: auto;
     top: -50vh;
     right: auto;
-    left: -5vh;
+    right: -5vh;
     transform: rotate(180deg);
   }
 
@@ -39,7 +39,7 @@
       background: transparent;
       transition: border-color 0.2s;
       resize: vertical;
-      color:#fff;
+      color: $white;
      }
 
     .form__field::placeholder {

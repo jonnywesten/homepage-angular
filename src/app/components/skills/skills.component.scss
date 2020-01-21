@@ -1,0 +1,34 @@
+@import "../../../styles/colors";
+
+.content {
+
+  .skill-container{
+    margin-top: -25px;
+  }
+
+  .skill-col {
+
+    &-inner{
+      background: $darkblue;
+    }
+
+    &-header{
+      background: rgba(255, 255, 255, 0.05);
+    }
+    &-icon {
+      color: $white;
+      font-size: 86px;
+    }
+
+    &-list{
+      margin: 20px auto;
+      width: auto;
+      display: table;
+    }
+
+    h4 {
+      margin-top: -15px;
+      margin-bottom: 10px;
+    }
+  }
+}

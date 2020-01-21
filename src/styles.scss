@@ -20,8 +20,8 @@ h1,h2,h3,h4,h5,h6, .link{
   user-select: none;
   position: absolute;
   font-size: 66vh;
-  right: -5vh;
-  bottom: -40vh;
+  left: -5vh;
+  bottom: -50vh;
   opacity: 0.02;
 }
 
@@ -58,3 +58,6 @@ h2{
   }
 }
 
+.boxed{
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
