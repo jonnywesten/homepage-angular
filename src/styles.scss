@@ -3,8 +3,8 @@
 @import "styles/buttons";
 @import "styles/modal";
 
-html,body {
-font-family: 'Noto Sans', sans-serif;
+html, body {
+  font-family: 'Noto Sans', sans-serif;
   margin: 0;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
@@ -12,52 +12,65 @@ font-family: 'Noto Sans', sans-serif;
   overflow-x: hidden;
   padding: 0 !important;
 }
-h1,h2,h3,h4,h5,h6, .link{
+
+h1, h2, h3, h4, h5, h6, .link {
   font-family: 'Fjalla One', sans-serif;
 }
 
-.mdi-bg{
+
+
+.mdi-bg {
   user-select: none;
   position: absolute;
   font-size: 66vh;
   left: -5vh;
   bottom: -50vh;
-  opacity: 0.02;
+  opacity: 0.03;
+
+  &.inverse{
+    bottom: auto;
+    top: -50vh;
+    right: -5vh;
+    transform: rotate(180deg);
+  }
 }
 
 
-.content{
+.content {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
 
-a{
+a {
   transition: .2s ease-out;
-  &:hover{
+
+  &:hover {
     text-decoration: none;
   }
 
 }
-h1{
+
+h1 {
   font-size: 4rem;
-  @media screen and (max-width: 992px){
+  @media screen and (max-width: 992px) {
     font-size: 3.5rem;
   }
 }
 
 
-h2{
+h2 {
   font-size: 2.8rem;
 }
 
 .btn, p {
   font-size: 13px;
+
   &.text-large {
     font-size: 18px;
   }
 }
 
-.boxed{
+.boxed {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }

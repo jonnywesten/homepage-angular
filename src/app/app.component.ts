@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   constructor() {
   }
 
-  private imgs = new Array();
+  private imgs = [];
 
 
   ngOnInit(): void {

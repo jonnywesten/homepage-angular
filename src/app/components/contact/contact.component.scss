@@ -3,13 +3,6 @@
 
 .content {
 
-  .mdi-bg {
-    bottom: auto;
-    top: -50vh;
-    right: auto;
-    right: -5vh;
-    transform: rotate(180deg);
-  }
 
   .contact-sent {
     min-height: 339px;
@@ -25,21 +18,22 @@
     }
 
     .error-msg {
-      color: red;
+      color: #ff2929;
+      font-weight: bold;
     }
 
     .form__field {
       font-family: inherit;
       width: 100%;
       border: 0;
-      border-bottom: 1px solid $lightgrey;
+      border-bottom: 1px solid $text;
       outline: 0;
       font-size: 12px;
       padding: 7px 0;
       background: transparent;
       transition: border-color 0.2s;
       resize: vertical;
-      color: $white;
+      color: $strongtext;
      }
 
     .form__field::placeholder {

@@ -1,22 +1,21 @@
-$white: #fff;
-$lightgrey: #cacaca;
-$darkblue: #060713;
-$lightblue: #638EF2;
-$page-bg: #25314c;
 
+$darkblue: #060713;
+$lightblue: #729dff;
+$page-bg: #25314c;
+$text: #ddd;
+$strongtext: #fff;
 
 body{
-  background: $page-bg;
-  color: $lightgrey;
+  background: linear-gradient(to bottom, lighten($page-bg, 8%), lighten($page-bg, 15%));
+  color: $text;
+}
 
+h1, h2 , h3, h4, h5, h6, a, .link, .btn{
+  color: $strongtext;
 }
 
 .lightblue{
   color: $lightblue;
-}
-
-h1, h2 , h3, h4, h5, h6{
-  color: $white;
 }
 
 .text-inherit{
@@ -24,10 +23,9 @@ h1, h2 , h3, h4, h5, h6{
 }
 
 a{
-  color: $white;
   transition: .2s ease-out;
   &:hover{
-    color: $lightgrey;
+    color: $text;
     text-decoration: none;
   }
 

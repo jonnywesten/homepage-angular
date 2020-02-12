@@ -22,7 +22,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       icon: 'mdi-centos',
-      title: 'Worklflow',
+      title: 'Workflow',
       items: ['Git/SVN', 'npm', 'gulp', 'gradle', 'nginx', 'Docker', 'AWS']
     }
   ];

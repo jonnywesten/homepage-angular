@@ -1,10 +1,10 @@
-<div class="content pb-5">
+<div class="content">
 
-  <div class="row pb-3 mx-auto about-inner">
+  <div class="row mx-auto about-inner">
 
     <div class="col-12 skill-container">
       <div class="row mb-5">
-        <div *ngFor="let col of skills" class="col-8 col-sm-4 offset-2 offset-sm-0 mb-5 skill-col">
+        <div *ngFor="let col of skills; let i = index" class="col-6 col-sm-4  mb-5 skill-col">
           <div class="skill-col-inner h-100 boxed">
             <div class="skill-col-header text-center pb-2">
               <i class="mdi {{col.icon}} skill-col-icon"></i>
@@ -22,6 +22,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
