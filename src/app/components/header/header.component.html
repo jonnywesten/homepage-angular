@@ -5,35 +5,31 @@
       <img class="profile-image mr-5 d-none d-md-block" src="me.png">
       <div>
 
-        <h4 class="mb-2 text-inherit">About Me</h4>
+        <h4 class="mb-2 text-inherit">{{text.headerSup}}</h4>
         <h1 class="mt-0 mb-3 mr-2">
-          I create&nbsp;
+          {{text.headerStart}}&nbsp;
           <br class="d-sm-none"/>
           <div class="animated-words">
-            <span>applications</span>
-            <span>sites</span>
-            <span>components</span>
+            <span>{{text.word1}}</span>
+            <span>{{text.word2}}</span>
+            <span>{{text.word3}}</span>
           </div>
           <br/>
-          for the web.
+          {{text.headerEnd}}
         </h1>
 
         <img class="profile-image mb-4 d-md-none" src="me.png">
 
         <div class="border-top my-3 w-75"></div>
 
-        <p class="mb-md-3">
-          Hi, my name is Daniel Elport, I'm a frontend engineer based in Germany who
-          enjoys building (and occasionally designing) exceptional, high-quality websites and applications. Fork me on
-          <a _ngcontent-txk-c3="" href="https://github.com/DanielElport?tab=repositories" target="_blank">GitHub</a>
-          or see my full resume at <a _ngcontent-txk-c3="" href="https://www.linkedin.com/in/daniel-elport-a86b93123/"
-                                      target="_blank">LinkedIn.</a>
+        <p class="mb-md-3" [innerHTML]="text.text">
+
         </p>
 
-        <div class="link my-3 d-inline-block">
+        <a class="link my-3 d-inline-block" href="https://code-smart.com/content/cv.pdf" target="_blank">
           <i class="mdi mdi-launch"></i>
-          FULL RESUME
-        </div>
+          {{text.link1}}
+        </a>
 
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,25 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ls: LanguageService) { }
 
-  public skills = [
-    {
-      icon: 'mdi-language-java',
-      title: 'Languages',
-      items: ['JavaScript (ES6)', 'TypeScript', 'HTML', '(S)CSS', 'Java', 'PHP', 'R']
-    },
-    {
-      icon: 'mdi-electron-framework',
-      title: 'Frameworks',
-      items: ['Angular', 'React', 'Bootstrap', 'Material Design', 'nodeJS', 'Spring']
-    },
-    {
-      icon: 'mdi-centos',
-      title: 'Workflow',
-      items: ['Git/SVN', 'npm', 'gulp', 'gradle', 'nginx', 'Docker', 'AWS']
-    }
-  ];
+  public text = this.ls.data.skills;
+
 
   ngOnInit() {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-projects-heading',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsHeadingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ls: LanguageService) { }
+
+  public text = this.ls.data.projectsHeading;
 
   ngOnInit() {
   }

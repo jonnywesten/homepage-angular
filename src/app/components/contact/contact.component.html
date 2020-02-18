@@ -5,19 +5,18 @@
   <div class="row my-5 py-3 mx-auto">
 
     <div class="col-12 mb">
-      <h4 class="mb-0 text-inherit">Contact</h4>
-      <h1 class="mt-0 mb-4">Get In <span class="lightblue">Touch</span></h1>
+      <h4 class="mb-0 text-inherit">{{text.headerSup}}</h4>
+      <h1 class="mt-0 mb-4" [innerHTML]="text.header"></h1>
     </div>
 
     <div class="col-12 mb-4">
       <p>
-        If you'd like to work with me, would like more information, or if you'd just like to chat then email me to get
-        in touch.
+        {{text.text}}
       </p>
     </div>
 
     <div class="col-12 pt-5 contact-sent" *ngIf="sent">
-      Thank you! Your message has been sent.
+      {{text.text}}
     </div>
 
     <div class="col-12 contact-form" *ngIf="!sent">
@@ -27,25 +26,25 @@
       </div>
 
       <div class="form__group">
-        <input type="text" id="name" class="form__field" placeholder="Your Name" [(ngModel)]="name">
+        <input type="text" id="name" class="form__field" placeholder="Name" [(ngModel)]="name">
         <label for="name" class="form__label">Name</label>
       </div>
 
       <div class="form__group">
-        <input type="email" id="email" class="form__field" placeholder="Your Email" [(ngModel)]="email">
+        <input type="email" id="email" class="form__field" placeholder="Email" [(ngModel)]="email">
         <label for="email" class="form__label">Email</label>
       </div>
 
       <div class="form__group">
-        <textarea id="message" class="form__field" placeholder="Your Message" rows="6" [(ngModel)]="message"></textarea>
-        <label for="message" class="form__label">Message</label>
+        <textarea id="message" class="form__field" placeholder="{{text.field3}}" rows="6" [(ngModel)]="message"></textarea>
+        <label for="message" class="form__label">{{text.field3}}</label>
       </div>
 
       <div class="col-xs-12 mt-2 text-right">
 
         <div class="link my-3" (click)="submit()">
           <i class="mdi mdi-send"></i>
-          SEND
+          {{text.button}}
         </div>
 
       </div>

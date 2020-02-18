@@ -1,17 +1,19 @@
-<app-nav-menu></app-nav-menu>
+<div *ngIf="ls.data">
+  <app-nav-menu></app-nav-menu>
 
-<section id="start">
-  <app-header></app-header>
-  <app-skills></app-skills>
-</section>
+  <section id="start">
+    <app-header></app-header>
+    <app-skills></app-skills>
+  </section>
 
-<section id ="projects">
-  <app-projects-heading></app-projects-heading>
-  <app-projects></app-projects>
-</section>
+  <section id="projects">
+    <app-projects-heading></app-projects-heading>
+    <app-projects></app-projects>
+  </section>
 
-<section id="contact">
-  <app-contact></app-contact>
-</section>
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
+</div>

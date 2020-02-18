@@ -1,6 +1,7 @@
 import {Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, HostListener, ElementRef} from '@angular/core';
 import {NguCarousel, NguCarouselConfig} from '@ngu/carousel';
 import {HttpClient} from '@angular/common/http';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
 
-  constructor(private http: HttpClient,
+  constructor(private ls: LanguageService,
               private elRef: ElementRef,
               private cdr: ChangeDetectorRef) {
   }
@@ -28,32 +29,26 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       hideOnSingleSlide: true
     }
   };
-  items = [];
+
+  public text = this.ls.data.projects;
 
   activeItemIndex = 0;
-  activeItem;
+  activeItem = this.text.items[this.activeItemIndex];
 
   ngOnInit() {
-    this.http.get('https://code-smart.com/content-data/projects.json')
-      .toPromise()
-      .then((res: any) => {
-        this.items = res.projects;
-        this.activeItem = this.items[this.activeItemIndex];
-      });
-
   }
 
   ngAfterViewInit() {
     this.cdr.detectChanges();
   }
 
-  selectItem(i: number, directionRight?: boolean) {
+  selectItem(i: number) {
 
     this.activeItemIndex = i;
 
     document.getElementById('active-item').style.opacity = '0';
     setTimeout(() => {
-      this.activeItem = this.items[this.activeItemIndex];
+      this.activeItem = this.text.items[this.activeItemIndex];
       document.getElementById('active-item').style.opacity = '1';
     }, 200);
   }
@@ -61,7 +56,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   selectNext() {
 
     this.activeItemIndex++;
-    if (this.activeItemIndex >= this.items.length) {
+    if (this.activeItemIndex >= this.text.items.length) {
       this.activeItemIndex = 0;
     }
     this.selectItem(this.activeItemIndex);
@@ -70,12 +65,12 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   selectPrevious() {
     this.activeItemIndex--;
     if (this.activeItemIndex < 0) {
-      this.activeItemIndex = this.items.length - 1;
+      this.activeItemIndex = this.text.items.length - 1;
     }
     this.selectItem(this.activeItemIndex);
   }
 
   isActive(i: number): string {
-    return this.items.indexOf(this.activeItem) === i ? 'isActive' : '';
+    return this.text.items.indexOf(this.activeItem) === i ? 'isActive' : '';
   }
 }

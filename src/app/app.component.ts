@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {LanguageService} from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +8,16 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() {
+  constructor(private ls: LanguageService) {
+    ls.load();
   }
 
   private imgs = [];
 
-
   ngOnInit(): void {
 
     this.load(
-      'me.png'
+      'me.png',
     );
 
     setTimeout(() => {

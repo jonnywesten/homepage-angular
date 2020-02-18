@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import smoothscroll from 'smoothscroll-polyfill/dist/smoothscroll.js';
 import {BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 import {PrivacyComponent} from '../privacy/privacy.component';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -10,12 +11,14 @@ import {PrivacyComponent} from '../privacy/privacy.component';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor(private bsModalRef: BsModalRef,
+  constructor(private ls: LanguageService,
+              private bsModalRef: BsModalRef,
               private modalService: BsModalService) {
     smoothscroll.polyfill();
   }
 
   public open = false;
+  public text = this.ls.data.menu;
 
   ngOnInit() {
   }

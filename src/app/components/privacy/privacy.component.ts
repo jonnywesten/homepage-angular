@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BsModalRef} from 'ngx-bootstrap/modal';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-privacy',
@@ -8,7 +9,12 @@ import {BsModalRef} from 'ngx-bootstrap/modal';
 })
 export class PrivacyComponent implements OnInit {
 
-  constructor(public bsModalRef: BsModalRef) { }
+  constructor(private ls: LanguageService,
+              public bsModalRef: BsModalRef) {
+  }
+
+  public text = this.ls.data.privacy;
+
 
   ngOnInit() {
   }
