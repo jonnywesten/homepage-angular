@@ -12,7 +12,6 @@ export class SkillsComponent implements OnInit {
 
   public text;
 
-
   ngOnInit() {
     this.ls.sub.subscribe((res: any) => {
       this.text = res.skills;

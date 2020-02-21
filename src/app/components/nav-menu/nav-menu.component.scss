@@ -16,7 +16,7 @@
 
 .menu-backdrop {
   position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -28,19 +28,22 @@
   }
 }
 
-$menuwidth: 190px;
+$menuwidth: 260px;
 
 .menu {
   box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
   top: 0;
-  max-width: $menuwidth;
-  width: $menuwidth;
   min-width: $menuwidth;
+  width: $menuwidth;
+  max-width: 100%;
   z-index: 3;
   left: 0;
-  transition: all .2s linear;
+  transition: all .15s linear;
   background: $page-bg;
   overflow: hidden;
+  font-size: 16px;
+  font-family: 'Fjalla One', sans-serif;
+
 
   &:not(.open) {
     left: -$menuwidth;
@@ -49,7 +52,7 @@ $menuwidth: 190px;
   .menu-title{
     font-size: 20px;
     position: absolute;
-    right: 45px;
+    right: 75px;
     top: 8px;
     font-family: 'Fjalla One', sans-serif;
     text-transform: uppercase;
@@ -71,6 +74,9 @@ $menuwidth: 190px;
     transition: .1s all linear;
     cursor: pointer;
 
+    i{
+      margin-right: 25px;
+    }
     &:hover {
       color: #fff;
       background: rgba(255, 255, 255, 0.1);
@@ -89,17 +95,11 @@ $menuwidth: 190px;
 
 
   #input {
-    border: 0;
-    background: transparent;
-    border-bottom: 1px solid $text;
-    outline: 0;
-    line-height: 1.6em;
-    display: block;
-    text-align: left;
-    width: $menuwidth - 40px;
+    display: inline;
     cursor: pointer;
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
     transform-origin: right top;
+    padding-left: 3px;
   }
 
   #input.open {

@@ -1,8 +1,14 @@
 @import "colors";
-
+.modal-backdrop.show {
+  opacity: 0.75;
+}
 .modal-dialog {
   width: 100%;
   max-width: 1030px;
+
+  @media screen and(max-width: 1000px){
+    margin: 0;
+  }
 
   .modal-content {
     border-radius: 2px;

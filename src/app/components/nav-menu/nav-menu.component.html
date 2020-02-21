@@ -8,37 +8,54 @@
 <div class="menu h-100 position-fixed" [ngClass]="{'open': open}" (click)="closeDrop()">
 
   <div class="header p-2 py-1 mb-2">
-  <div class="menu-icon-container d-inline px-2" (click)="toggleNav()">
-    <i class="mdi mdi-menu"></i>
-  </div>
+    <div class="menu-icon-container d-inline px-2" (click)="toggleNav()">
+      <i class="mdi mdi-menu"></i>
+    </div>
     <div class="menu-title">code smart</div>
   </div>
+  <i class="mdi mdi-periodic-table mdi-bg"></i>
 
   <ul class="navbar-nav mr-0 ml-auto">
     <li class="nav-item">
-      <a class="nav-link" (click)="scrollToElement('#start')">{{text[0]}}</a>
+      <a class="nav-link" (click)="scrollToElement('#start')">
+        <i class="mdi mdi-account-details"></i>
+        {{text[0]}}
+      </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="scrollToElement('#projects')">{{text[1]}}</a>
+      <a class="nav-link" (click)="scrollToElement('#projects')">
+        <i class="mdi mdi-image-multiple"></i>
+        {{text[1]}}
+      </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="scrollToElement('#contact')">{{text[2]}}</a>
+      <a class="nav-link" (click)="scrollToElement('#contact')">
+        <i class="mdi mdi-email-multiple"></i>
+        {{text[2]}}
+      </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="openPrivacyModal()">{{text[3]}}</a>
+      <a class="nav-link" (click)="openPrivacyModal()">
+        <i class="mdi mdi-file-document-box-multiple"></i>
+        {{text[3]}}
+      </a>
     </li>
     <li>
-      <div class="nav-link button-group pt-3">
-        <div id="input" (click)="openDrop()">
-          {{ls.getSelectedLanguage()}}
-          <i id="icon" class="mdi mdi-menu-down"></i>
-        </div>
-        <ul id="dropdown-menu" [ngClass]="{'open': dropOpen}">
-          <li (click)="ls.setSelectedLanguage('en')">English</li>
-          <li (click)="ls.setSelectedLanguage('de')">Deutsch</li>
-        </ul>
-      </div>
+      <div class="nav-link button-group pt-3" (click)="openDrop()">
 
+        <i class="mdi mdi-voice"></i>
+
+        <div class="d-inline-block">
+          <div id="input">
+            {{ls.getSelectedLanguage()}}
+            <i id="icon" class="mdi mdi-menu-down"></i>
+          </div>
+          <ul id="dropdown-menu" [ngClass]="{'open': dropOpen}">
+            <li (click)="ls.setSelectedLanguage('en')">English</li>
+            <li (click)="ls.setSelectedLanguage('de')">Deutsch</li>
+          </ul>
+        </div>
+      </div>
     </li>
   </ul>
 </div>

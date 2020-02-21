@@ -13,15 +13,20 @@ export class LanguageService {
 
   public selectedLanguage = 'en';
   public sub = new BehaviorSubject<any>(0);
+  private cache = {};
 
   private load() {
 
-    this.http.get('https://code-smart.com/content/' + this.selectedLanguage + '.json')
-      .toPromise()
-      .then(res => {
-        this.sub.next(res);
-      });
-
+    if (!this.cache[this.selectedLanguage]) {
+      this.http.get('https://code-smart.com/content/' + this.selectedLanguage + '.json')
+        .toPromise()
+        .then(res => {
+          this.cache[this.selectedLanguage] = res;
+          this.sub.next(res);
+        });
+    } else {
+      this.sub.next(this.cache[this.selectedLanguage]);
+    }
   }
 
   public getSelectedLanguage() {
