@@ -11,7 +11,7 @@ import {LanguageService} from '../../services/language.service';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor(private ls: LanguageService,
+  constructor(public ls: LanguageService,
               private bsModalRef: BsModalRef,
               private modalService: BsModalService) {
     smoothscroll.polyfill();

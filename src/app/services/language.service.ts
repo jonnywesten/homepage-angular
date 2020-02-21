@@ -14,7 +14,7 @@ export class LanguageService {
   public selectedLanguage = 'en';
   public sub = new BehaviorSubject<any>(0);
 
-  public load() {
+  private load() {
 
     this.http.get('https://code-smart.com/content/' + this.selectedLanguage + '.json')
       .toPromise()

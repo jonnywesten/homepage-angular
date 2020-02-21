@@ -7,7 +7,7 @@
 
 <div class="menu h-100 position-fixed" [ngClass]="{'open': open}" (click)="closeDrop()">
 
-  <div class="header p-2 py-1">
+  <div class="header p-2 py-1 mb-2">
   <div class="menu-icon-container d-inline px-2" (click)="toggleNav()">
     <i class="mdi mdi-menu"></i>
   </div>
@@ -28,7 +28,7 @@
       <a class="nav-link" (click)="openPrivacyModal()">{{text[3]}}</a>
     </li>
     <li>
-      <div class="button-group">
+      <div class="nav-link button-group pt-3">
         <div id="input" (click)="openDrop()">
           {{ls.getSelectedLanguage()}}
           <i id="icon" class="mdi mdi-menu-down"></i>

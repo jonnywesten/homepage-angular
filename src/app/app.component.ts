@@ -16,13 +16,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.load('me.png', 'header-bg.jpg');
+
     this.ls.sub.subscribe((res: any) => {
 
-
+      this.text = res;
 
       setTimeout(() => {
-        this.text = res;
-
         document.getElementById('loading-overlay').style.opacity = '0';
       }, 500);
 
