@@ -32,22 +32,21 @@ export class ContactComponent implements OnInit {
     this.errorMsg = '';
 
     if (!this.name || !this.email || !this.message) {
-      this.errorMsg = 'Please enter your name, email and message';
+      this.errorMsg = this.text.error;
     } else if (!this.validateEmail(this.email)) {
-      this.errorMsg = 'Please enter a valid email address';
+      this.errorMsg = this.text.errorEmail;
     } else {
 
       this.http.post('./mail/contact_me.php', {
         name: this.name,
         email: this.email,
         message: this.message
-      })
-        .toPromise()
+      }).toPromise()
         .then(() => {
           this.sent = true;
         })
         .catch(() => {
-          this.errorMsg = 'There was an error submitting the form. Please try again later.';
+          this.errorMsg = this.text.errorHttp;
         });
     }
   }
