@@ -1,36 +1,44 @@
-<nav class="navbar navbar-expand-md navbar-dark filled" >
-  <a class="navbar-brand" href="#">
-    <h4 class="my-0">
-      <i class="mdi mdi-apps mr-1 logo-icon"></i>
-      code smart
-    <!--  <span class="lightblue">smart</span>-->
-    </h4>
-  </a>
-  <button class="navbar-toggler" (click)="toggleNav()" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-    <div class='threebar hamburger' [ngClass]="{'cross': open}">
-      <div class='bar'></div>
-      <div class='bar'></div>
-      <div class='bar'></div>
-    </div>
-  </button>
+<div class="menu-icon-container position-fixed m-2 px-2" (click)="toggleNav()">
+  <i class="mdi mdi-menu"></i>
+</div>
 
-  <div class="navbar-collapse" [ngClass]="{'collapse': !open}">
-    <ul class="navbar-nav mr-0 ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" (click)="scrollToElement('#start')">{{text[0]}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="scrollToElement('#projects')">{{text[1]}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="scrollToElement('#contact')">{{text[2]}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="openPrivacyModal()">{{text[3]}}</a>
-      </li>
-    </ul>
+<div class="menu-backdrop" (click)="toggleNav()" [ngClass]="{'open': open}">
+</div>
 
+<div class="menu h-100 position-fixed" [ngClass]="{'open': open}" (click)="closeDrop()">
+
+  <div class="header p-2 py-1">
+  <div class="menu-icon-container d-inline px-2" (click)="toggleNav()">
+    <i class="mdi mdi-menu"></i>
   </div>
-</nav>
+    <div class="menu-title">code smart</div>
+  </div>
+
+  <ul class="navbar-nav mr-0 ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" (click)="scrollToElement('#start')">{{text[0]}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="scrollToElement('#projects')">{{text[1]}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="scrollToElement('#contact')">{{text[2]}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="openPrivacyModal()">{{text[3]}}</a>
+    </li>
+    <li>
+      <div class="button-group">
+        <div id="input" (click)="openDrop()">
+          {{ls.getSelectedLanguage()}}
+          <i id="icon" class="mdi mdi-menu-down"></i>
+        </div>
+        <ul id="dropdown-menu" [ngClass]="{'open': dropOpen}">
+          <li (click)="ls.setSelectedLanguage('en')">English</li>
+          <li (click)="ls.setSelectedLanguage('de')">Deutsch</li>
+        </ul>
+      </div>
+
+    </li>
+  </ul>
+</div>

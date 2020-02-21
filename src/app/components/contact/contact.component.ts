@@ -20,11 +20,13 @@ export class ContactComponent implements OnInit {
   public errorMsg: string;
   public sent = false;
 
-  public text = this.ls.data.contact;
+  public text;
 
   ngOnInit() {
+    this.ls.sub.subscribe((res: any) => {
+      this.text = res.contact;
+    });
   }
-
   submit() {
 
     this.errorMsg = '';

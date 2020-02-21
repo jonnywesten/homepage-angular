@@ -13,10 +13,12 @@ export class PrivacyComponent implements OnInit {
               public bsModalRef: BsModalRef) {
   }
 
-  public text = this.ls.data.privacy;
-
+  public text;
 
   ngOnInit() {
+    this.ls.sub.subscribe((res: any) => {
+      this.text = res.privacy;
+    });
   }
 
 }

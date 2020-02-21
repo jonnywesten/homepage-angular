@@ -30,12 +30,16 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     }
   };
 
-  public text = this.ls.data.projects;
+  public text;
 
   activeItemIndex = 0;
-  activeItem = this.text.items[this.activeItemIndex];
+  activeItem;
 
   ngOnInit() {
+    this.ls.sub.subscribe((res: any) => {
+      this.text = res.projects;
+      this.activeItem = this.text.items[this.activeItemIndex];
+    });
   }
 
   ngAfterViewInit() {

@@ -10,10 +10,13 @@ export class SkillsComponent implements OnInit {
 
   constructor(private ls: LanguageService) { }
 
-  public text = this.ls.data.skills;
+  public text;
 
 
   ngOnInit() {
+    this.ls.sub.subscribe((res: any) => {
+      this.text = res.skills;
+    });
   }
 
 }

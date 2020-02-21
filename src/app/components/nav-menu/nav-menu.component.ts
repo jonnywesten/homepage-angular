@@ -15,14 +15,19 @@ export class NavMenuComponent implements OnInit {
               private bsModalRef: BsModalRef,
               private modalService: BsModalService) {
     smoothscroll.polyfill();
+
+    this.ls.sub.subscribe((res: any) => {
+      this.text = res.menu;
+    });
   }
 
   public open = false;
-  public text = this.ls.data.menu;
+  public dropOpen = false;
+  public text;
 
   ngOnInit() {
-  }
 
+  }
   openPrivacyModal() {
     this.open = false;
     this.bsModalRef = this.modalService.show(PrivacyComponent, {});
@@ -37,5 +42,19 @@ export class NavMenuComponent implements OnInit {
 
   toggleNav() {
     this.open = !this.open;
+    this.dropOpen = false;
+ //   document.querySelector('html').style['overflow-y'] = this.open ? 'hidden' : 'scroll';
+  }
+
+  openDrop() {
+    if (!this.dropOpen) {
+      setTimeout(() => {
+        this.dropOpen = true;
+      });
+    }
+  }
+
+  closeDrop() {
+    this.dropOpen = false;
   }
 }

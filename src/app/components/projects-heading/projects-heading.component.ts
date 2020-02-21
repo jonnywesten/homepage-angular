@@ -10,9 +10,12 @@ export class ProjectsHeadingComponent implements OnInit {
 
   constructor(private ls: LanguageService) { }
 
-  public text = this.ls.data.projectsHeading;
+  public text;
 
   ngOnInit() {
+    this.ls.sub.subscribe((res: any) => {
+      this.text = res.projectsHeading;
+    });
   }
 
 }

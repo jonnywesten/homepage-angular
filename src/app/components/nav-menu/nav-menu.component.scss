@@ -1,99 +1,183 @@
 @import "../../../styles/colors";
 
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 15;
-  transition: .2s all ease-in;
-  padding: 0 1rem;
-
-
-  &.filled {
-    background: $darkblue;
-
-  }
-
-  .navbar-toggler {
-    padding: 8px 5px 0;
-    font-size: 12px;
-    line-height: 1;
-    background-color: transparent;
-    width: 3.5em;
-    outline: none;
-    border: none;
-
-  }
-
-  .nav-item {
-    transition: .1s color linear;
-    cursor: pointer;
-    &:hover {
-      color: $strongtext;
-    }
-  }
-
-  .navbar-collapse {
-    transition: .2s all ease-in;
-    padding-bottom: 10px;
-    @media screen and (max-width: 768px) {
-      overflow: hidden;
-    }
-  }
-
-  .navbar-collapse.collapse:not(.show) {
-    max-height: 0;
-    height: 0;
-    padding-bottom: 0;
-    display: block;
-  }
-}
-
-.logo-icon {
-  &:before {
-    transform: translate(0, 1px);
-  }
-}
-
-
-.threebar {
-  position: relative;
-  height: 3em;
-
-  .bar {
-    position: absolute;
-    width: 2em;
-    height: 3px;
-    background: $text;
-    top: 1em;
-    transition: all 0.5s ease;
-
-    &:nth-child(1) {
-      transform: translateY(-250%);
-    }
-
-    &:nth-child(3) {
-      transform: translateY(250%);
-    }
-  }
-
-  &.cross {
-    .bar:nth-child(1) {
-      transform: rotate(45deg);
-    }
-
-    .bar:nth-child(3) {
-      transform: rotate(-45deg);
-    }
-
-    .bar:nth-child(2) {
-      opacity: 0;
-    }
-  }
+.menu-icon-container {
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: color .15s linear;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
 
   &:hover {
-    .bar {
-      background: $strongtext;
-    }
+    color: #fff;
   }
 }
+
+.menu-backdrop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: all .2s linear;
+
+  &:not(.open) {
+    background: rgba(0, 0, 0, 0.0);
+    z-index: -1;
+  }
+}
+
+$menuwidth: 190px;
+
+.menu {
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+  top: 0;
+  max-width: $menuwidth;
+  width: $menuwidth;
+  min-width: $menuwidth;
+  z-index: 3;
+  left: 0;
+  transition: all .2s linear;
+  background: $page-bg;
+
+  &:not(.open) {
+    left: -$menuwidth;
+  }
+
+  .menu-title{
+    font-size: 20px;
+    position: absolute;
+    right: 45px;
+    top: 8px;
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .header {
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 12px -3px #000;
+
+  }
+
+  .menu-icon-container {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  .nav-link {
+    color: $text;
+    padding: 15px;
+    transition: .1s all linear;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+
+  /* DROPDOWN
+   ================================== */
+
+  .button-group {
+    position: relative;
+    width: $menuwidth - 35px;
+    margin: 10px 0 0 15px;
+    font-size: inherit;
+  }
+
+
+  #input {
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid $text;
+    outline: 0;
+    line-height: 1.8em;
+    display: block;
+    text-align: left;
+    font-size: 0.95em;
+    width: $menuwidth - 40px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 1;
+    transform-origin: right top;
+  }
+
+  #input.open {
+    opacity: 0;
+  }
+
+  #icon {
+    position: absolute;
+    right: 5px;
+  }
+
+
+  .button-group .marka {
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    z-index: 9999;
+    cursor: pointer;
+  }
+
+  .button-group .marka i {
+    background: grey !important;
+  }
+
+  #dropdown-menu {
+    position: absolute;
+    top: -1em;
+    right: 0;
+    left: 0;
+    margin: 1em auto;
+    padding: 1em 0 1em;
+    width: $menuwidth * 0.75;
+    list-style: none;
+    text-align: left;
+    border-radius: 2px;
+    background: #fafafa;
+    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scale(0);
+    transform-origin: right top;
+  }
+
+  #dropdown-menu li {
+    position: relative;
+    padding: 0 1.8em;
+    line-height: 2.35em;
+    transform: translate3d(0, -10px, 0);
+    opacity: 0;
+    cursor: pointer;
+    transition: background .1s linear;
+    background: rgba(0, 0, 0, 0);
+    color: #222222;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  #dropdown-menu.open {
+    transform: scale(1);
+  }
+
+  #dropdown-menu.open li {
+    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  .card-shadow,
+  #dropdown-menu {
+    box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15), 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
+  }
+
+
+}
+
+
+
+
