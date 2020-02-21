@@ -16,7 +16,7 @@
 
 .menu-backdrop {
   position: fixed;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.66);
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -41,31 +41,29 @@ $menuwidth: 260px;
   transition: all .15s linear;
   background: $page-bg;
   overflow: hidden;
-  font-size: 16px;
-  font-family: 'Fjalla One', sans-serif;
-
+  font-size: 13px;
+  text-transform: uppercase;
 
   &:not(.open) {
     left: -$menuwidth;
   }
 
-  .menu-title{
-    font-size: 20px;
-    position: absolute;
-    right: 75px;
-    top: 8px;
-    font-family: 'Fjalla One', sans-serif;
-    text-transform: uppercase;
-  }
-
   .header {
     background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 12px -3px #000;
+    box-shadow: 0 0 34px -12px #000;
 
-  }
+    .menu-icon-container {
+      background: rgba(0, 0, 0, 0);
+    }
 
-  .menu-icon-container {
-    background: rgba(0, 0, 0, 0);
+    .menu-title {
+      font-size: 20px;
+      position: absolute;
+      right: 75px;
+      top: 8px;
+      font-family: 'Fjalla One', sans-serif;
+      text-transform: uppercase;
+    }
   }
 
   .nav-link {
@@ -74,9 +72,10 @@ $menuwidth: 260px;
     transition: .1s all linear;
     cursor: pointer;
 
-    i{
+    i {
       margin-right: 25px;
     }
+
     &:hover {
       color: #fff;
       background: rgba(255, 255, 255, 0.1);
@@ -87,44 +86,19 @@ $menuwidth: 260px;
   /* DROPDOWN
    ================================== */
 
-  .button-group {
-    position: relative;
-    width: $menuwidth;
-    font-size: inherit;
-  }
-
-
   #input {
     display: inline;
     cursor: pointer;
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
     transform-origin: right top;
-    padding-left: 3px;
-  }
 
-  #input.open {
-    opacity: 0;
-  }
-
-  #icon {
-    position: absolute;
-    right: 25px;
-  }
-
-
-  .button-group .marka {
-    position: absolute;
-    right: 8px;
-    top: 10px;
-    z-index: 9999;
-    cursor: pointer;
-  }
-
-  .button-group .marka i {
-    background: grey !important;
+    &.open {
+      opacity: 0;
+    }
   }
 
   #dropdown-menu {
+    box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15), 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
     position: absolute;
     top: -1em;
     right: 0;
@@ -139,40 +113,33 @@ $menuwidth: 260px;
     transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
     transform: scale(0);
     transform-origin: right top;
-  }
+    text-transform: none;
 
-  #dropdown-menu li {
-    position: relative;
-    padding: 0 1.8em;
-    line-height: 2.35em;
-    transform: translate3d(0, -10px, 0);
-    opacity: 0;
-    cursor: pointer;
-    transition: background .1s linear;
-    background: rgba(0, 0, 0, 0);
-    color: #222222;
+    li {
+      position: relative;
+      padding: 0 1.8em;
+      line-height: 2.35em;
+      transform: translate3d(0, -10px, 0);
+      opacity: 0;
+      cursor: pointer;
+      transition: background .1s linear;
+      background: rgba(0, 0, 0, 0);
+      color: #222222;
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.15);
+      &:hover {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &.open{
+      transform: scale(1);
+      li{
+        transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
     }
   }
-
-  #dropdown-menu.open {
-    transform: scale(1);
-  }
-
-  #dropdown-menu.open li {
-    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-
-  .card-shadow,
-  #dropdown-menu {
-    box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15), 0 0.1em 0.2em rgba(0, 0, 0, 0.2);
-  }
-
-
 }
 
 
