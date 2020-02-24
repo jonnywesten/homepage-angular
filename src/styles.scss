@@ -2,6 +2,8 @@
 @import "styles/colors";
 @import "styles/buttons";
 @import "styles/modal";
+@import "styles/dropdown";
+@import "styles/checkbox";
 
 html, body {
   font-family: 'Noto Sans', sans-serif;
@@ -16,8 +18,6 @@ html, body {
 h1, h2, h3, h4, h5, h6, .link {
   font-family: 'Fjalla One', sans-serif;
 }
-
-
 
 .mdi-bg {
   user-select: none;

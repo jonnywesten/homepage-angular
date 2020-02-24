@@ -1,8 +1,6 @@
 @import "../../../styles/colors";
 
-
 .content {
-
 
   .contact-sent {
     min-height: 339px;
@@ -46,7 +44,7 @@
       top: 20px;
     }
 
-    label,
+    .form__label,
     .form__field:focus~.form__label {
       position: absolute;
       top: 0;

@@ -5,7 +5,7 @@
 <div class="menu-backdrop" (click)="toggleNav()" [ngClass]="{'open': open}">
 </div>
 
-<div class="menu h-100 position-fixed" [ngClass]="{'open': open}" (click)="closeDrop()">
+<div class="menu h-100 position-fixed boxed" [ngClass]="{'open': open}" (click)="closeDrop()">
 
   <div class="header p-2 py-1 mb-4">
     <div class="menu-icon-container d-inline px-2" (click)="toggleNav()">
@@ -45,12 +45,12 @@
 
         <i class="mdi mdi-voice"></i>
 
-        <div class="d-inline-block  pl-1">
-          <div id="input">
+        <div class="dropdown-container pl-1">
+          <div class="dropdown-input">
             {{ls.getSelectedLanguage()}}
             <i class="mdi mdi-menu-down"></i>
           </div>
-          <ul id="dropdown-menu" [ngClass]="{'open': dropOpen}">
+          <ul class="dropdown-select w-75" [ngClass]="{'open': dropOpen}">
             <li (click)="ls.setSelectedLanguage('en')">English</li>
             <li (click)="ls.setSelectedLanguage('de')">Deutsch</li>
           </ul>

@@ -36,19 +36,25 @@
       </div>
 
       <div class="form__group">
-        <textarea id="message" class="form__field" placeholder="{{text.field3}}" rows="6" [(ngModel)]="message"></textarea>
+        <textarea id="message" class="form__field" placeholder="{{text.field3}}" rows="6"
+                  [(ngModel)]="message"></textarea>
         <label for="message" class="form__label">{{text.field3}}</label>
       </div>
 
-      <div class="col-xs-12 mt-2 text-right">
-
-        <div class="link my-3" (click)="submit()">
-          <i class="mdi mdi-send"></i>
-          {{text.button}}
-        </div>
-
+      <div class="form__group mt-0">
+        <label class="pure-material-checkbox">
+          <input type="checkbox">
+          <span>{{text.checkbox}} <a (click)="openPrivacyModal($event)">{{text.privacy}}</a></span>
+        </label>
       </div>
-
     </div>
+
+    <div class="col-12 mt-2 text-right">
+      <div class="link my-3" (click)="submit()">
+        <i class="mdi mdi-send"></i>
+        {{text.button}}
+      </div>
+    </div>
+
   </div>
 </div>

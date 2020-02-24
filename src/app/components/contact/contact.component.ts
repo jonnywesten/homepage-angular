@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {LanguageService} from '../../services/language.service';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {PrivacyComponent} from '../privacy/privacy.component';
 
 @Component({
   selector: 'app-contact',
@@ -10,12 +12,15 @@ import {LanguageService} from '../../services/language.service';
 export class ContactComponent implements OnInit {
 
   constructor(private ls: LanguageService,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private bsModalRef: BsModalRef,
+              private modalService: BsModalService) {
   }
 
   public name: string;
   public email: string;
   public message: string;
+  public agreed: boolean;
 
   public errorMsg: string;
   public sent = false;
@@ -27,6 +32,7 @@ export class ContactComponent implements OnInit {
       this.text = res.contact;
     });
   }
+
   submit() {
 
     this.errorMsg = '';
@@ -35,6 +41,8 @@ export class ContactComponent implements OnInit {
       this.errorMsg = this.text.error;
     } else if (!this.validateEmail(this.email)) {
       this.errorMsg = this.text.errorEmail;
+    } else if (!this.agreed) {
+      this.errorMsg = this.text.errorPrivacy;
     } else {
 
       this.http.post('./mail/contact_me.php', {
@@ -49,6 +57,12 @@ export class ContactComponent implements OnInit {
           this.errorMsg = this.text.errorHttp;
         });
     }
+  }
+
+  openPrivacyModal(e: Event) {
+    e.preventDefault();
+    this.bsModalRef = this.modalService.show(PrivacyComponent, {});
+    this.bsModalRef.content.closeBtnName = 'Close';
   }
 
   validateEmail(email): boolean {
