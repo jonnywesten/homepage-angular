@@ -67,12 +67,13 @@ $menuwidth: 260px;
 
   .nav-link {
     color: $text;
-    padding: 15px;
+    padding: 10px 15px;
     transition: .1s all linear;
     cursor: pointer;
 
     i {
       margin-right: 25px;
+      font-size: 16px;
     }
 
     &:hover {

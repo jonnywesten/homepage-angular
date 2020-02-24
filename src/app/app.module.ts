@@ -15,6 +15,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {MyHammerConfig} from './config/my-hammer.config';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsHeadingComponent } from './components/projects-heading/projects-heading.component';
+import { LegalComponent } from './components/legal/legal.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProjectsHeadingComponent } from './components/projects-heading/projects
     PrivacyComponent,
     HeaderComponent,
     SkillsComponent,
-    ProjectsHeadingComponent
+    ProjectsHeadingComponent,
+    LegalComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { ProjectsHeadingComponent } from './components/projects-heading/projects
     BsModalRef, BsModalService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [PrivacyComponent]
+  entryComponents: [PrivacyComponent, LegalComponent]
 })
 export class AppModule {
 }

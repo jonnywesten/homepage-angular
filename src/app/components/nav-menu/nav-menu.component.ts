@@ -3,6 +3,7 @@ import smoothscroll from 'smoothscroll-polyfill/dist/smoothscroll.js';
 import {BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 import {PrivacyComponent} from '../privacy/privacy.component';
 import {LanguageService} from '../../services/language.service';
+import {LegalComponent} from '../legal/legal.component';
 
 @Component({
   selector: 'app-nav-menu',
@@ -28,9 +29,10 @@ export class NavMenuComponent implements OnInit {
   ngOnInit() {
 
   }
-  openPrivacyModal() {
+  openModal(component: string) {
     this.open = false;
-    this.bsModalRef = this.modalService.show(PrivacyComponent, {});
+    const comp = component === 'legal' ? LegalComponent : PrivacyComponent;
+    this.bsModalRef = this.modalService.show(comp, {});
     this.bsModalRef.content.closeBtnName = 'Close';
   }
 
