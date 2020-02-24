@@ -43,7 +43,7 @@
 
       <div class="form__group mt-0">
         <label class="pure-material-checkbox">
-          <input type="checkbox">
+          <input type="checkbox" [(ngModel)]="agreed">
           <span>{{text.checkbox}} <a (click)="openPrivacyModal($event)">{{text.privacy}}</a></span>
         </label>
       </div>
