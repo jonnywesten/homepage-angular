@@ -4,6 +4,7 @@ import {BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 import {PrivacyComponent} from '../privacy/privacy.component';
 import {LanguageService} from '../../services/language.service';
 import {LegalComponent} from '../legal/legal.component';
+import {ScrollService} from '../../services/scroll.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -13,9 +14,9 @@ import {LegalComponent} from '../legal/legal.component';
 export class NavMenuComponent implements OnInit {
 
   constructor(public ls: LanguageService,
+              public scrollService: ScrollService,
               private bsModalRef: BsModalRef,
               private modalService: BsModalService) {
-    smoothscroll.polyfill();
 
     this.ls.sub.subscribe((res: any) => {
       this.text = res.menu;
@@ -37,8 +38,7 @@ export class NavMenuComponent implements OnInit {
   }
 
   scrollToElement(el): void {
-    const $element = document.querySelector(el);
-    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    this.scrollService.scrollTo(el);
     this.open = false;
   }
 

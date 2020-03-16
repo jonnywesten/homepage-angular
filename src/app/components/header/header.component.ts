@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LanguageService} from '../../services/language.service';
+import {ScrollService} from '../../services/scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import {LanguageService} from '../../services/language.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private ls: LanguageService) {
+  constructor(private ls: LanguageService,
+              public scrollService: ScrollService) {
   }
 
   public text;
