@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {NguCarouselModule} from '@ngu/carousel';
+import {NgxPageScrollCoreModule} from 'ngx-page-scroll-core';
 
 import {AppComponent} from './app.component';
 import {NavMenuComponent} from './components/nav-menu/nav-menu.component';
@@ -13,9 +14,9 @@ import {BsModalRef, BsModalService, ModalModule} from 'ngx-bootstrap';
 import {PrivacyComponent} from './components/privacy/privacy.component';
 import {HeaderComponent} from './components/header/header.component';
 import {MyHammerConfig} from './config/my-hammer.config';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProjectsHeadingComponent } from './components/projects-heading/projects-heading.component';
-import { LegalComponent } from './components/legal/legal.component';
+import {SkillsComponent} from './components/skills/skills.component';
+import {ProjectsHeadingComponent} from './components/projects-heading/projects-heading.component';
+import {LegalComponent} from './components/legal/legal.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LegalComponent } from './components/legal/legal.component';
     FormsModule,
     HttpClientModule,
     NguCarouselModule,
+    NgxPageScrollCoreModule.forRoot({duration: 400}),
     ModalModule.forRoot()
   ],
   providers: [

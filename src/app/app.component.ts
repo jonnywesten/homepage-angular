@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LanguageService} from './services/language.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -9,35 +10,53 @@ import {LanguageService} from './services/language.service';
 export class AppComponent implements OnInit {
 
   constructor(private ls: LanguageService) {
+    AOS.init({
+      offset: 100,
+      duration: 500,
+      easing: 'ease-out',
+      delay: 100,
+    });
   }
 
-  private imgs = [];
   public text;
 
-  ngOnInit(): void {
+  async ngOnInit() {
 
-    this.load('me.png', 'header-bg.jpg');
+    const baseImgs = ['me.png', 'header-bg.jpg'];
 
     this.ls.sub.subscribe((res: any) => {
 
       this.text = res;
+      const imgs = [];
 
-      setTimeout(() => {
-        document.getElementById('loading-overlay').style.opacity = '0';
-      }, 500);
+      const eachRecursive = ((obj) => {
+        for (const k in obj) {
+          if (typeof obj[k] === 'object' && obj[k] !== null) {
+            eachRecursive(obj[k]);
+          } else {
+            imgs.push('projects/' + obj[k]);
+          }
+        }
+      });
 
-      setTimeout(() => {
-        document.getElementById('loading-overlay').style.display = 'none';
-      }, 2000);
+      eachRecursive(this.text);
+
+      imgs.filter(s => s.toString().endsWith('.jpg')).concat(baseImgs).forEach(async (el) => {
+        await this.addImageProcess(el.toString());
+      });
+
+      document.getElementById('loading-overlay').style.opacity = '0';
     });
-
   }
 
-  load(...args: any[]): void {
-    for (let i = 0; i < args.length; i++) {
-      this.imgs[i] = new Image();
-      this.imgs[i].src = args[i];
-    }
+
+  addImageProcess(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img.height);
+      img.onerror = reject;
+      img.src = 'assets/img/' + src;
+    });
   }
 
 }

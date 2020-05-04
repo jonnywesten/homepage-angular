@@ -5,7 +5,8 @@
     <div class="col-12 skill-container">
       <div class="row mb-5">
         <div *ngFor="let col of text; let i = index" class="col-6 col-sm-4  mb-5 skill-col">
-          <div class="skill-col-inner h-100 boxed" [ngClass]="(i === 3) ? 'd-sm-none':''">
+          <div class="skill-col-inner h-100 boxed"
+               [ngClass]="(i === 3) ? 'd-sm-none':''">
             <div class="skill-col-header text-center pb-2">
               <i class="mdi {{col.icon}} skill-col-icon"></i>
               <h4>

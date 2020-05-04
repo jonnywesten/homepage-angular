@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import smoothscroll from 'smoothscroll-polyfill/dist/smoothscroll.js';
 import {BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 import {PrivacyComponent} from '../privacy/privacy.component';
 import {LanguageService} from '../../services/language.service';
@@ -45,7 +44,6 @@ export class NavMenuComponent implements OnInit {
   toggleNav() {
     this.open = !this.open;
     this.dropOpen = false;
- //   document.querySelector('html').style['overflow-y'] = this.open ? 'hidden' : 'scroll';
   }
 
   openDrop() {

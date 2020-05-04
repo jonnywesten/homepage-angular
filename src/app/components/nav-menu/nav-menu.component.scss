@@ -44,7 +44,7 @@ $menuwidth: 260px;
   text-transform: uppercase;
 
   &:not(.open) {
-    left: -$menuwidth;
+    transform: translateX(-$menuwidth);
   }
 
   .header {

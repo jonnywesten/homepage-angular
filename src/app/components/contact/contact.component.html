@@ -4,12 +4,12 @@
 
   <div class="row my-5 py-3 mx-auto">
 
-    <div class="col-12 mb">
+    <div class="col-12 mb" data-aos="fade-down">
       <h4 class="mb-0 text-inherit">{{text.headerSup}}</h4>
       <h1 class="mt-0 mb-4" [innerHTML]="text.header"></h1>
     </div>
 
-    <div class="col-12 mb-4">
+    <div class="col-12 mb-4" data-aos="fade-left">
       <p [innerHTML]="text.text">
       </p>
     </div>
@@ -18,7 +18,7 @@
       {{text.success}}
     </div>
 
-    <div class="col-12 contact-form" *ngIf="!sent">
+    <div class="col-12 contact-form" *ngIf="!sent"  data-aos="fade-right">
 
       <div class="error-msg" *ngIf="errorMsg">
         {{errorMsg}}
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="col-12 mt-2 text-right">
+    <div class="col-12 mt-2 text-right" data-aos="fade-up">
       <div class="link my-3" (click)="submit()">
         <i class="mdi mdi-send"></i>
         {{text.button}}

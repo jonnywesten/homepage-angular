@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Subject, Subscription} from 'rxjs';
+import {BehaviorSubject, ReplaySubject, Subject, Subscription} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class LanguageService {
   }
 
   public selectedLanguage = 'en';
-  public sub = new BehaviorSubject<any>(0);
+  public sub = new ReplaySubject<any>(1);
   private cache = {};
 
   private load() {

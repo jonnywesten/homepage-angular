@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
-import smoothscroll from 'smoothscroll-polyfill/dist/smoothscroll';
+import {Injectable} from '@angular/core';
+import { PageScrollService } from 'ngx-page-scroll-core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
 
-  constructor() {
-    smoothscroll.polyfill();
+  constructor(private pageScrollService: PageScrollService) {
+
   }
 
-  public scrollTo(el: string){
-    const $element = document.querySelector(el);
-    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  public scrollTo(el: string) {
+    this.pageScrollService.scroll({
+      document,
+      scrollTarget: el,
+    });
   }
 }
