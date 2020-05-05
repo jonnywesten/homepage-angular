@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="col-12 mt-2 text-right" data-aos="fade-up">
+    <div class="col-12 mt-2 text-right" data-aos="fade-up" *ngIf="!sent">
       <div class="link my-3" (click)="submit()">
         <i class="mdi mdi-send"></i>
         {{text.button}}
