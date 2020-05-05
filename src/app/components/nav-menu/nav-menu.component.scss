@@ -19,12 +19,12 @@
   background: rgba(0, 0, 0, 0.66);
   width: 100%;
   height: 100%;
-  z-index: 2;
+  pointer-events: none;
   transition: all .2s linear;
-
+  z-index: 2;
+  opacity: 1;
   &:not(.open) {
-    background: rgba(0, 0, 0, 0.0);
-    z-index: -1;
+    opacity: 0;
   }
 }
 
@@ -37,7 +37,7 @@ $menuwidth: 260px;
   max-width: 100%;
   z-index: 3;
   left: 0;
-  transition: all .15s linear;
+  transition: all .2s linear;
   background: $page-bg;
   overflow: hidden;
   font-size: 13px;
