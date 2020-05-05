@@ -1,60 +1,84 @@
 @import "../../../styles/colors";
 
 .content {
-  background: $darkblue;
   z-index: 1;
   overflow: hidden;
+  background: $darkblue;
 
-  #active-item {
-    transition: 0.2s all ease-out;
-    background: rgba(255, 255, 255, 0.05);
-
-    .item-description-container {
-      min-height: 300px;
+  @keyframes fadeOutIn {
+    0% {
+      opacity: 1;
     }
-
-    .item-description {
-      line-height: 1.6;
-      text-align: justify;
+    40% {
+      opacity: 0;
     }
-
-    .item-badge {
-      border-radius: 2px;
-      background: $lightblue;
-      padding: 4px 8px;
-      color: $strongtext;
-      font-size: 11px;
+    60% {
+      opacity: 0;
     }
+    100%{
+      opacity: 1;
+    }
+  }
 
-    .item-image-container {
-      min-height: 240px;
 
-      .item-image {
-        background-size: cover;
-        background-position: 50% 0;
-        background-repeat: no-repeat;
+  .active-item-container {
+    #active-item {
+
+      animation-fill-mode: both;
+
+      &.fadeOutIn {
+        animation: fadeOutIn 0.5s linear;
+      }
+
+      .item-description-container {
+        min-height: 300px;
+      }
+
+      .item-description {
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      .item-badge {
         border-radius: 2px;
+        background: $lightblue;
+        padding: 4px 8px;
+        color: $strongtext;
+        font-size: 11px;
+      }
+
+      .item-image-container {
+        min-height: 240px;
+
+        .item-image {
+          background-size: cover;
+          background-position: 50% 0;
+          background-repeat: no-repeat;
+          border-radius: 2px;
+        }
       }
     }
 
-    &:hover{
-      .rightRs, .leftRs{
+    &:hover {
+      .rightRs, .leftRs {
         opacity: 1;
       }
     }
-    @media screen and (max-width: 768px){
-      .rightRs, .leftRs{
+
+    @media screen and (max-width: 768px) {
+      .rightRs, .leftRs {
         opacity: 1;
       }
     }
+
     .rightRs, .leftRs {
       top: 230px;
     }
-
   }
 
   .rightRs,
   .leftRs {
+    cursor: pointer;
     font-size: 42px;
     width: 42px;
     height: 42px;
@@ -80,29 +104,34 @@
     }
   }
 
-  ngu-carousel {
-    width: 100%;
+  .ngu-container {
+    background: $darkerblue;
 
-    .item {
-      padding: 8px 18px 0;
-      cursor: pointer;
 
-      .text {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
+    ngu-carousel {
+      width: 100%;
 
-      .image {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        background-size: cover;
-        background-position: 50% 50%;
-        transition: .0s linear;
-        margin-right: 0;
-        margin-left: auto;
-        border: 3px solid $text;
+      .item {
+        padding: 8px 18px 0;
+        cursor: pointer;
+
+        .text {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        .image {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          background-size: cover;
+          background-position: 50% 50%;
+          transition: .0s linear;
+          margin-right: 0;
+          margin-left: auto;
+          border: 3px solid $text;
+        }
       }
     }
   }

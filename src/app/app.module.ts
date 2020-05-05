@@ -11,12 +11,11 @@ import {ContactComponent} from './components/contact/contact.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {ProjectsComponent} from './components/projects/projects.component';
 import {BsModalRef, BsModalService, ModalModule} from 'ngx-bootstrap';
-import {PrivacyComponent} from './components/privacy/privacy.component';
 import {HeaderComponent} from './components/header/header.component';
 import {MyHammerConfig} from './config/my-hammer.config';
 import {SkillsComponent} from './components/skills/skills.component';
 import {ProjectsHeadingComponent} from './components/projects-heading/projects-heading.component';
-import {LegalComponent} from './components/legal/legal.component';
+import {ModalComponent} from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +24,10 @@ import {LegalComponent} from './components/legal/legal.component';
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
-    PrivacyComponent,
     HeaderComponent,
     SkillsComponent,
     ProjectsHeadingComponent,
-    LegalComponent
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +45,7 @@ import {LegalComponent} from './components/legal/legal.component';
     BsModalRef, BsModalService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [PrivacyComponent, LegalComponent]
+  entryComponents: [ModalComponent]
 })
 export class AppModule {
 }

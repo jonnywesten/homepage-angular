@@ -1,5 +1,6 @@
 <div class="content boxed" data-aos="fade-left">
 
+  <div class="active-item-container">
   <div class="col-12 p-5" id="active-item"
        (swipeleft)="selectNext()"
        (swiperight)="selectPrevious()">
@@ -38,7 +39,7 @@
         </div>
       </div>
     </div>
-
+  </div>
     <div class="d-block">
       <div class="rightRs mr-2" (click)="selectNext()">
         <i class="mdi mdi-chevron-right"></i>
@@ -49,7 +50,7 @@
     </div>
   </div>
 
-  <div class="col-12 px-2 py-5 d-none d-sm-block item-carousel">
+  <div class="col-12 px-2 py-5 d-none d-sm-block item-carousel ngu-container">
 
     <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="text.items">
 

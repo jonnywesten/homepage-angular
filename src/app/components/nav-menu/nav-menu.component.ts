@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
-import {PrivacyComponent} from '../privacy/privacy.component';
 import {LanguageService} from '../../services/language.service';
-import {LegalComponent} from '../legal/legal.component';
 import {ScrollService} from '../../services/scroll.service';
+import {ModalComponent} from '../modal/modal.component';
 
 @Component({
   selector: 'app-nav-menu',
@@ -18,7 +17,7 @@ export class NavMenuComponent implements OnInit {
               private modalService: BsModalService) {
 
     this.ls.sub.subscribe((res: any) => {
-      this.text = res.menu;
+      this.text = res;
     });
   }
 
@@ -29,11 +28,14 @@ export class NavMenuComponent implements OnInit {
   ngOnInit() {
 
   }
+
   openModal(component: string) {
     this.open = false;
-    const comp = component === 'legal' ? LegalComponent : PrivacyComponent;
-    this.bsModalRef = this.modalService.show(comp, {});
-    this.bsModalRef.content.closeBtnName = 'Close';
+    this.bsModalRef = this.modalService.show(ModalComponent, {
+      initialState: {
+        text: this.text[component]
+      }
+    });
   }
 
   scrollToElement(el): void {
@@ -56,5 +58,14 @@ export class NavMenuComponent implements OnInit {
 
   closeDrop() {
     this.dropOpen = false;
+  }
+
+  setLanguage(lang: string) {
+    if (this.ls.selectedLanguage !== lang) {
+      this.ls.setLanguage(lang);
+      setTimeout(() => {
+        this.toggleNav();
+      }, 500);
+    }
   }
 }

@@ -9,11 +9,11 @@
   .skill-col {
 
     &-inner{
-      background: $darkblue;
+      background: $darkerblue;
     }
 
     &-header{
-      background: rgba(255, 255, 255, 0.05);
+      background: $darkblue;
     }
     &-icon {
       color: $strongtext;

@@ -19,31 +19,31 @@
      <li class="nav-item">
       <a class="nav-link" (click)="scrollToElement('#start')">
         <i class="mdi mdi-account-details"></i>
-        {{text[0]}}
+        {{text.menu[0]}}
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" (click)="scrollToElement('#projects')">
         <i class="mdi mdi-image-multiple"></i>
-        {{text[1]}}
+        {{text.menu[1]}}
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" (click)="scrollToElement('#contact')">
         <i class="mdi mdi-email"></i>
-        {{text[2]}}
+        {{text.menu[2]}}
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" (click)="openModal('privacy')">
         <i class="mdi mdi-database-search"></i>
-        {{text[3]}}
+        {{text.menu[3]}}
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" (click)="openModal('legal')">
         <i class="mdi mdi-file-document-box"></i>
-        {{text[4]}}
+        {{text.menu[4]}}
       </a>
     </li>
 
@@ -55,12 +55,12 @@
 
         <div class="dropdown-container pl-1">
           <div class="dropdown-input">
-            {{ls.getSelectedLanguage()}}
+            {{ls.getLanguage()}}
             <i class="mdi mdi-menu-down"></i>
           </div>
           <ul class="dropdown-select w-75" [ngClass]="{'open': dropOpen}">
-            <li (click)="ls.setSelectedLanguage('en')">English</li>
-            <li (click)="ls.setSelectedLanguage('de')">Deutsch</li>
+            <li (click)="setLanguage('en')">English</li>
+            <li (click)="setLanguage('de')">Deutsch</li>
           </ul>
         </div>
       </div>

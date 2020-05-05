@@ -19,36 +19,35 @@ export class AppComponent implements OnInit {
   }
 
   public text;
+  private baseImgs = ['me.png', 'header-bg.jpg'];
 
-  async ngOnInit() {
+  ngOnInit() {
 
-    const baseImgs = ['me.png', 'header-bg.jpg'];
-
-    this.ls.sub.subscribe((res: any) => {
+    this.ls.sub.subscribe(async (res: any) => {
 
       this.text = res;
-      const imgs = [];
-
-      const eachRecursive = ((obj) => {
-        for (const k in obj) {
-          if (typeof obj[k] === 'object' && obj[k] !== null) {
-            eachRecursive(obj[k]);
-          } else {
-            imgs.push('projects/' + obj[k]);
-          }
-        }
-      });
-
-      eachRecursive(this.text);
-
-      imgs.filter(s => s.toString().endsWith('.jpg')).concat(baseImgs).forEach(async (el) => {
-        await this.addImageProcess(el.toString());
-      });
-
+      await this.loadImages();
       document.getElementById('loading-overlay').style.opacity = '0';
     });
   }
 
+  async loadImages() {
+
+    return await new Promise((resolve) => {
+
+      Object.entries(this.flatten(this.text))
+        .map(el => 'projects/' + el[1])
+        .filter(el => el.endsWith('.jpg'))
+        .concat(this.baseImgs)
+        .forEach(async (el, index, arr) => {
+
+          await this.addImageProcess(el);
+          if (arr.indexOf(el) === arr.length - 1) {
+            resolve(true);
+          }
+        });
+    });
+  }
 
   addImageProcess(src) {
     return new Promise((resolve, reject) => {
@@ -57,6 +56,17 @@ export class AppComponent implements OnInit {
       img.onerror = reject;
       img.src = 'assets/img/' + src;
     });
+  }
+
+  flatten(obj, path = '') {
+    if (!(obj instanceof Object)) {
+      return {[path.replace(/\.$/g, '')]: obj};
+    }
+    return Object.keys(obj).reduce((output, key) => {
+      return obj instanceof Array ?
+        {...output, ...this.flatten(obj[key], path + '[' + key + '].')} :
+        {...output, ...this.flatten(obj[key], path + key + '.')};
+    }, {});
   }
 
 }

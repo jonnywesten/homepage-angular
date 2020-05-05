@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {LanguageService} from '../../services/language.service';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
-import {PrivacyComponent} from '../privacy/privacy.component';
+import {ModalComponent} from '../modal/modal.component';
 
 @Component({
   selector: 'app-contact',
@@ -26,30 +26,28 @@ export class ContactComponent implements OnInit {
   public sent = false;
 
   public text;
+  private privacyText;
 
   ngOnInit() {
     this.ls.sub.subscribe((res: any) => {
       this.text = res.contact;
+      this.privacyText = res.privacy;
     });
   }
 
   submit() {
 
-    this.errorMsg = '';
+    this.errorMsg = this.validate();
 
-    if (!this.name || !this.email || !this.message) {
-      this.errorMsg = this.text.error;
-    } else if (!this.validateEmail(this.email)) {
-      this.errorMsg = this.text.errorEmail;
-    } else if (!this.agreed) {
-      this.errorMsg = this.text.errorPrivacy;
-    } else {
+    if (this.errorMsg.length === 0) {
 
-      this.http.post('./mail/contact_me.php', {
-        name: this.name,
-        email: this.email,
-        message: this.message
-      }).toPromise()
+      this.http
+        .post('https://s3.code-smart.com/mail/contact_me.php', {
+          name: this.name,
+          email: this.email,
+          message: this.message
+        })
+        .toPromise()
         .then(() => {
           this.sent = true;
         })
@@ -61,8 +59,27 @@ export class ContactComponent implements OnInit {
 
   openPrivacyModal(e: Event) {
     e.preventDefault();
-    this.bsModalRef = this.modalService.show(PrivacyComponent, {});
-    this.bsModalRef.content.closeBtnName = 'Close';
+    this.bsModalRef = this.modalService.show(ModalComponent, {
+      initialState: {
+        text: this.privacyText
+      }
+    });
+  }
+
+  validate(): string {
+
+    let err = '';
+
+    if (!this.name || !this.email || !this.message) {
+      err = this.text.error;
+    } else if (!this.validateEmail(this.email)) {
+      err = this.text.errorEmail;
+    }
+    if (!this.agreed) {
+      err += '<br>' + this.text.errorPrivacy;
+    }
+
+    return err;
   }
 
   validateEmail(email): boolean {

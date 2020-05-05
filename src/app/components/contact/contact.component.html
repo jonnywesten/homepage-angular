@@ -20,8 +20,7 @@
 
     <div class="col-12 contact-form" *ngIf="!sent"  data-aos="fade-right">
 
-      <div class="error-msg" *ngIf="errorMsg">
-        {{errorMsg}}
+      <div class="error-msg" *ngIf="errorMsg" [innerHTML]="errorMsg">
       </div>
 
       <div class="form__group">

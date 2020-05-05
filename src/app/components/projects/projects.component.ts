@@ -19,7 +19,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   carouselConfig: NguCarouselConfig = {
     grid: {xs: 2, sm: 2, md: 3, lg: 3, all: 0},
     load: 6,
-    interval: {timing: 9999999, initialDelay: 9999999},
+    interval: {timing: 1e9, initialDelay: 1e9},
     loop: true,
     touch: true,
     slide: 1,
@@ -49,13 +49,17 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   selectItem(i: number) {
 
     this.activeItemIndex = i;
+    const $activeItem = document.getElementById('active-item');
 
-    document.getElementById('active-item').style.opacity = '0';
+    $activeItem.classList.add('fadeOutIn');
     setTimeout(() => {
       this.activeItem = this.text.items[this.activeItemIndex];
-      document.getElementById('active-item').style.opacity = '1';
-    }, 200);
+    }, 250);
+    setTimeout(() => {
+      $activeItem.classList.remove('fadeOutIn');
+    }, 500);
   }
+
 
   selectNext() {
 
