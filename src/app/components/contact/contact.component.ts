@@ -27,6 +27,7 @@ export class ContactComponent implements OnInit {
 
   public text;
   private privacyText;
+  private requestPending = false;
 
   ngOnInit() {
     this.ls.sub.subscribe((res: any) => {
@@ -39,7 +40,9 @@ export class ContactComponent implements OnInit {
 
     this.errorMsg = this.validate();
 
-    if (this.errorMsg.length === 0) {
+    if (this.errorMsg.length === 0 && !this.requestPending) {
+
+      this.requestPending = true;
 
       this.http
         .post('https://s3.code-smart.com/mail/contact_me.php', {
@@ -53,6 +56,9 @@ export class ContactComponent implements OnInit {
         })
         .catch(() => {
           this.errorMsg = this.text.errorHttp;
+        })
+        .finally(() => {
+          this.requestPending = false;
         });
     }
   }
