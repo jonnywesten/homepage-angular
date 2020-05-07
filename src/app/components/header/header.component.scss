@@ -1,7 +1,8 @@
 @import "../../../styles/colors";
 
 .header {
-  background: url(../../../assets/img/header-bg.jpg) 50% 66%;
+  background: url(../../../assets/img/header-bg.jpg);
+  background-position: 50% 66%;
   background-blend-mode: overlay;
   background-size: cover;
 }

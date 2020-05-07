@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
       duration: 500,
       easing: 'ease-out',
       delay: 100,
+      once: true
     });
   }
 
