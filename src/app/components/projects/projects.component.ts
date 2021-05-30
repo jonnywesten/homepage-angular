@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
               private cdr: ChangeDetectorRef) {
   }
 
-  @ViewChild('myCarousel', {static: false}) myCarousel: NguCarousel<any>;
+  @ViewChild('myCarousel') myCarousel: NguCarousel<any>;
   carouselConfig: NguCarouselConfig = {
     grid: {xs: 2, sm: 2, md: 3, lg: 3, all: 0},
     load: 6,
