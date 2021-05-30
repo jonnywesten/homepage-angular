@@ -2,6 +2,7 @@ import {Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, HostList
 import {NguCarousel, NguCarouselConfig} from '@ngu/carousel';
 import {HttpClient} from '@angular/common/http';
 import {LanguageService} from '../../services/language.service';
+import {ImageService} from '../../services/image.service';
 
 @Component({
   selector: 'app-projects',
@@ -12,6 +13,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   constructor(private ls: LanguageService,
               private elRef: ElementRef,
+              public imageService: ImageService,
               private cdr: ChangeDetectorRef) {
   }
 

@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {LanguageService} from '../../services/language.service';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {ModalComponent} from '../modal/modal.component';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -45,7 +46,7 @@ export class ContactComponent implements OnInit {
       this.requestPending = true;
 
       this.http
-        .post('https://s3.code-smart.com/mail/contact_me.php', {
+        .post(environment.backendUrl + '/mail/contact_me.php', {
           name: this.name,
           email: this.email,
           message: this.message

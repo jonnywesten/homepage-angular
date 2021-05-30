@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LanguageService} from './services/language.service';
 import * as AOS from 'aos';
+import {ImageService} from './services/image.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import * as AOS from 'aos';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private ls: LanguageService) {
+  constructor(private imageService: ImageService, private ls: LanguageService) {
     AOS.init({
       offset: 100,
       duration: 500,
@@ -37,7 +38,7 @@ export class AppComponent implements OnInit {
     return await new Promise((resolve) => {
 
       Object.entries(this.flatten(this.text))
-        .map(el => 'projects/' + el[1])
+        .map(el => '/projects/' + el[1])
         .filter(el => el.endsWith('.jpg'))
         .concat(this.baseImgs)
         .forEach(async (el, index, arr) => {
@@ -55,7 +56,7 @@ export class AppComponent implements OnInit {
       const img = new Image();
       img.onload = () => resolve(img.height);
       img.onerror = reject;
-      img.src = 'assets/img/' + src;
+      img.src = this.imageService.get(src);
     });
   }
 

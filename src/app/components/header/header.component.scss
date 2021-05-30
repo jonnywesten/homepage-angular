@@ -1,7 +1,6 @@
 @import "../../../styles/colors";
 
 .header {
-  background: url(../../../assets/img/header-bg.jpg);
   background-position: 50% 66%;
   background-blend-mode: overlay;
   background-size: cover;
@@ -12,7 +11,7 @@
 
   .profile-image {
     max-width: 100%;
-    background: url(../../../assets/img/me.png) no-repeat center center;
+    background: #000000 no-repeat center center;
     background-size: contain;
     max-height: 150px;
     filter: brightness(0.8);

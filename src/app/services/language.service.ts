@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, ReplaySubject, Subject, Subscription} from 'rxjs';
+import {ReplaySubject} from 'rxjs';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class LanguageService {
     document.getElementById('loading-overlay').style.opacity = '1';
 
     if (!this.cache[this.selectedLanguage]) {
-      this.http.get('https://s3.code-smart.com/content/' + this.selectedLanguage + '.json')
+      this.http.get(environment.backendUrl + '/lang/' + this.selectedLanguage + '.json')
         .toPromise()
         .then(res => {
           this.cache[this.selectedLanguage] = res;
