@@ -28,3 +28,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: code-smart.com/
           local-dir: dist/
+          dangerous-clean-slate: true
