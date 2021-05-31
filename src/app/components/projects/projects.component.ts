@@ -1,6 +1,5 @@
-import {Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, HostListener, ElementRef} from '@angular/core';
+import {Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef, ElementRef, Renderer2} from '@angular/core';
 import {NguCarousel, NguCarouselConfig} from '@ngu/carousel';
-import {HttpClient} from '@angular/common/http';
 import {LanguageService} from '../../services/language.service';
 import {ImageService} from '../../services/image.service';
 
@@ -12,12 +11,14 @@ import {ImageService} from '../../services/image.service';
 export class ProjectsComponent implements OnInit, AfterViewInit {
 
   constructor(private ls: LanguageService,
-              private elRef: ElementRef,
+              private renderer: Renderer2,
               public imageService: ImageService,
               private cdr: ChangeDetectorRef) {
   }
 
-  @ViewChild('myCarousel') myCarousel: NguCarousel<any>;
+  @ViewChild('carousel') carouselRef: NguCarousel<any>;
+  @ViewChild('activeitem') activeItemRef: ElementRef<HTMLInputElement>;
+
   carouselConfig: NguCarouselConfig = {
     grid: {xs: 2, sm: 2, md: 3, lg: 3, all: 0},
     load: 6,
@@ -51,15 +52,13 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   selectItem(i: number) {
 
     this.activeItemIndex = i;
-    const $activeItem = document.getElementById('active-item');
-
-    $activeItem.classList.add('fadeOutIn');
+    this.renderer.addClass(this.activeItemRef.nativeElement, 'fadeOutIn');
     setTimeout(() => {
       this.activeItem = this.text.items[this.activeItemIndex];
     }, 250);
     setTimeout(() => {
-      $activeItem.classList.remove('fadeOutIn');
-    }, 500);
+      this.renderer.removeClass(this.activeItemRef.nativeElement, 'fadeOutIn');
+      }, 500);
   }
 
 

@@ -1,19 +1,16 @@
 import {Injectable} from '@angular/core';
-import { PageScrollService } from 'ngx-page-scroll-core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
 
-  constructor(private pageScrollService: PageScrollService) {
+  constructor() {
 
   }
 
   public scrollTo(el: string) {
-    this.pageScrollService.scroll({
-      document,
-      scrollTarget: el,
-    });
+    const element = document.querySelector(el);
+    if (element) { element.scrollIntoView({behavior: 'smooth', block: 'start'}); }
   }
 }
