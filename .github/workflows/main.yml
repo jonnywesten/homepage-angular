@@ -26,6 +26,6 @@ jobs:
           FTP_SERVER: code-smart.com
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          SERVER_DIR: ./code-smart.com/
+          SERVER_DIR: code-smart.com/
           LOCAL_DIR: dist
           ARGS: --delete
