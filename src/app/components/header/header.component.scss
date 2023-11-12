@@ -13,11 +13,10 @@
     max-width: 100%;
     background: #000000 no-repeat center center;
     background-size: contain;
-    max-height: 150px;
-    filter: brightness(0.8);
+    max-height: 221px;
     border-radius: 3px;
     @media screen and (max-width: 768px) {
-      max-height: 127px;
+      max-height: 180px;
     }
   }
 
