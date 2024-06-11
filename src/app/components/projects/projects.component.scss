@@ -62,7 +62,6 @@
     &:hover {
       .rightRs, .leftRs {
         opacity: 1;
-        z-index: 1;
       }
     }
 
@@ -101,6 +100,7 @@
       .rightRs,
       .leftRs{
         opacity: 1;
+        z-index: 1;
       }
     }
   }
